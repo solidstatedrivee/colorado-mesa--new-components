@@ -97,5 +97,6 @@ Before finishing, check every variation page of your component: renders without 
 
 ## Git
 
-- Work on a branch per component (e.g. `component/05-image-grid`); don't commit directly to `master`.
+- No branching: commit directly to `master`. Pull before you start and before you push — both developers share `master` and the single `components.css`.
+- Keep commits scoped to your component where possible.
 - Don't commit `.DS_Store` or `.site-snap/screenshots/` (already gitignored).

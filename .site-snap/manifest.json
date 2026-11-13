@@ -6,7 +6,28 @@
       "requested": "https://www.coloradomesa.edu/",
       "fullyLoaded": true,
       "capturedAt": "2026-11-13T15:14:33.844Z",
-      "file": "www.coloradomesa.edu/index.html"
+      "file": "www.coloradomesa.edu/reference-pages/homepage.html"
+    },
+    {
+      "url": "https://dev2020.coloradomesa.edu/test/hh-test/banner-video-background.html",
+      "requested": "https://dev2020.coloradomesa.edu/test/hh-test/banner-video-background.html",
+      "fullyLoaded": true,
+      "capturedAt": "2026-11-13T15:25:06.447Z",
+      "file": "www.coloradomesa.edu/reference-pages/banner-video-background.html"
+    },
+    {
+      "url": "https://dev2020.coloradomesa.edu/test/hh-test/banner-image.html",
+      "requested": "https://dev2020.coloradomesa.edu/test/hh-test/banner-image.html",
+      "fullyLoaded": true,
+      "capturedAt": "2026-11-13T15:26:56.536Z",
+      "file": "www.coloradomesa.edu/reference-pages/banner-image.html"
+    },
+    {
+      "url": "https://dev2020.coloradomesa.edu/test/hh-test/banner-image-popup-video.html",
+      "requested": "https://dev2020.coloradomesa.edu/test/hh-test/banner-image-popup-video.html",
+      "fullyLoaded": true,
+      "capturedAt": "2026-11-13T15:27:04.478Z",
+      "file": "www.coloradomesa.edu/reference-pages/banner-image-popup-video.html"
     }
   ],
   "files": {
@@ -17,7 +38,15 @@
     "https://cdn.sitesearch360.com/v13/ss360-unibox-v13.chunk.27665f6cc18723c8c279.js": "cdn.sitesearch360.com/v13/ss360-unibox-v13.chunk.27665f6cc18723c8c279.js",
     "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js": "cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js": "cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js",
+    "https://dev2020.coloradomesa.edu/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js": "www.coloradomesa.edu/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "https://dev2020.coloradomesa.edu/test/hh-test/banner-image-popup-video.html": "www.coloradomesa.edu/reference-pages/banner-image-popup-video.html",
+    "https://dev2020.coloradomesa.edu/test/hh-test/banner-image.html": "www.coloradomesa.edu/reference-pages/banner-image.html",
+    "https://dev2020.coloradomesa.edu/test/hh-test/banner-video-background.html": "www.coloradomesa.edu/reference-pages/banner-video-background.html",
+    "https://dev2020.coloradomesa.edu/test/images/cmu-nike-logo-2026.svg": "www.coloradomesa.edu/test/images/cmu-nike-logo-2026.svg",
+    "https://feed.jquery-plugins.net/load?url=https%3A%2F%2Fcoloradomesa.regroup.com%2Fnetworks%2Fcoloradomesa%2Fgroups%2Fall.rss%3Fcachebuster%3D1726&maxCount=1&dateCulture=en&dateFormat=": "feed.jquery-plugins.net/load@39ba9e75.json",
     "https://feed.jquery-plugins.net/load?url=https%3A%2F%2Fcoloradomesa.regroup.com%2Fnetworks%2Fcoloradomesa%2Fgroups%2Fall.rss%3Fcachebuster%3D2101&maxCount=1&dateCulture=en&dateFormat=": "feed.jquery-plugins.net/load.json",
+    "https://feed.jquery-plugins.net/load?url=https%3A%2F%2Fcoloradomesa.regroup.com%2Fnetworks%2Fcoloradomesa%2Fgroups%2Fall.rss%3Fcachebuster%3D3530&maxCount=1&dateCulture=en&dateFormat=": "feed.jquery-plugins.net/load@a366844f.json",
+    "https://feed.jquery-plugins.net/load?url=https%3A%2F%2Fcoloradomesa.regroup.com%2Fnetworks%2Fcoloradomesa%2Fgroups%2Fall.rss%3Fcachebuster%3D5027&maxCount=1&dateCulture=en&dateFormat=": "feed.jquery-plugins.net/load@1838b2a8.json",
     "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;900&display=swap": "fonts.googleapis.com/css2.css",
     "https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2": "fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2",
     "https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2": "fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2",
@@ -32,12 +61,16 @@
     "https://use.typekit.net/af/99ee37/0000000000000000774f2b09/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3": "use.typekit.net/af/99ee37/0000000000000000774f2b09/31/d.woff",
     "https://use.typekit.net/af/99ee37/0000000000000000774f2b09/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3": "use.typekit.net/af/99ee37/0000000000000000774f2b09/31/l.woff2",
     "https://use.typekit.net/lgv0boo.css": "use.typekit.net/lgv0boo.css",
-    "https://www.coloradomesa.edu/": "www.coloradomesa.edu/index.html",
+    "https://www.coloradomesa.edu/": "www.coloradomesa.edu/reference-pages/homepage.html",
+    "https://www.coloradomesa.edu//images/banners/default-banner.jpg": "www.coloradomesa.edu/images/banners/default-banner.jpg",
+    "https://www.coloradomesa.edu//images/margot.jpg": "www.coloradomesa.edu/images/margot.jpg",
     "https://www.coloradomesa.edu//images/svg/logos/cmu-logo.svg?v=20240801v1": "www.coloradomesa.edu/images/svg/logos/cmu-logo.svg",
     "https://www.coloradomesa.edu//images/svg/logos/cmu-wordmark.svg": "www.coloradomesa.edu/images/svg/logos/cmu-wordmark.svg",
     "https://www.coloradomesa.edu//images/svg/logos/mavzone.svg": "www.coloradomesa.edu/images/svg/logos/mavzone.svg",
     "https://www.coloradomesa.edu/css/home/home-styles-cmu.css?v=20211001v2": "www.coloradomesa.edu/css/home/home-styles-cmu.css",
     "https://www.coloradomesa.edu/css/style.css?v=20240802v3": "www.coloradomesa.edu/css/style.css",
+    "https://www.coloradomesa.edu/dining/images/fire-logo-v-black.png": "www.coloradomesa.edu/dining/images/fire-logo-v-black.png",
+    "https://www.coloradomesa.edu/dining/images/unbranded-logo-v-black.png": "www.coloradomesa.edu/dining/images/unbranded-logo-v-black.png",
     "https://www.coloradomesa.edu/fonts/hesland/hesland_regular-webfont.woff": "www.coloradomesa.edu/fonts/hesland/hesland_regular-webfont.woff",
     "https://www.coloradomesa.edu/fonts/hesland/hesland_regular-webfont.woff2": "www.coloradomesa.edu/fonts/hesland/hesland_regular-webfont.woff2",
     "https://www.coloradomesa.edu/fonts/hesland/hesland_sans_rough-webfont.woff": "www.coloradomesa.edu/fonts/hesland/hesland_sans_rough-webfont.woff",
@@ -143,24 +176,28 @@
     "https://www.coloradomesa.edu/images/templates/ufo.svg": "www.coloradomesa.edu/images/templates/ufo.svg",
     "https://www.coloradomesa.edu/images/templates/white-dot.png": "www.coloradomesa.edu/images/templates/white-dot.png",
     "https://www.coloradomesa.edu/js/feedek.js": "www.coloradomesa.edu/js/feedek.js",
+    "https://www.coloradomesa.edu/js/horizontal-timeline.js": "www.coloradomesa.edu/js/horizontal-timeline.js",
+    "https://www.coloradomesa.edu/js/jcarousel-nested/jcarousel-nested.js": "www.coloradomesa.edu/js/jcarousel-nested/jcarousel-nested.js",
+    "https://www.coloradomesa.edu/js/jcarousel-nested/jcarousel-swipe.js": "www.coloradomesa.edu/js/jcarousel-nested/jcarousel-swipe.js",
+    "https://www.coloradomesa.edu/js/jcarousel.js": "www.coloradomesa.edu/js/jcarousel.js",
+    "https://www.coloradomesa.edu/js/jquery.tubular.1.0.js": "www.coloradomesa.edu/js/jquery.tubular.1.0.js",
     "https://www.coloradomesa.edu/js/lazysizes.min.js": "www.coloradomesa.edu/js/lazysizes.min.js",
     "https://www.coloradomesa.edu/js/ls.unveilhooks.min.js": "www.coloradomesa.edu/js/ls.unveilhooks.min.js",
     "https://www.coloradomesa.edu/js/mega-menu.min.js?v=20240919v2": "www.coloradomesa.edu/js/mega-menu.min.js",
+    "https://www.coloradomesa.edu/js/printthis.min.js": "www.coloradomesa.edu/js/printthis.min.js",
     "https://www.coloradomesa.edu/js/rellax.min.js": "www.coloradomesa.edu/js/rellax.min.js",
     "https://www.coloradomesa.edu/js/scripts.js?v=20240919v1": "www.coloradomesa.edu/js/scripts.js",
     "https://www.coloradomesa.edu/js/site-search-360/sitesearch360script.js": "www.coloradomesa.edu/js/site-search-360/sitesearch360script.js",
     "https://www.coloradomesa.edu/now/2026/images/acs_maverick_fall-26_cmunow_2627_class-notes-becky.jpg": "www.coloradomesa.edu/now/2026/images/acs_maverick_fall-26_cmunow_2627_class-notes-becky.jpg",
     "https://www.coloradomesa.edu/now/2026/images/acs_maverick_fall-26_cmunow_2627_flying-full-circle.jpg": "www.coloradomesa.edu/now/2026/images/acs_maverick_fall-26_cmunow_2627_flying-full-circle.jpg",
-    "https://www.coloradomesa.edu/now/images/26-1031_cmu-football-tailgate_suite_game-photos_cme0039.jpg": "www.coloradomesa.edu/now/images/26-1031_cmu-football-tailgate_suite_game-photos_cme0039.jpg"
+    "https://www.coloradomesa.edu/now/images/26-1031_cmu-football-tailgate_suite_game-photos_cme0039.jpg": "www.coloradomesa.edu/now/images/26-1031_cmu-football-tailgate_suite_game-photos_cme0039.jpg",
+    "https://www.youtube.com/iframe_api": "www.youtube.com/iframe_api.js",
+    "https://www.youtube.com/s/player/fad7e4e9/www-widgetapi.vflset/www-widgetapi.js": "www.youtube.com/s/player/fad7e4e9/www-widgetapi.vflset/www-widgetapi.js"
   },
   "aliases": {},
   "lastRun": {
-    "at": "2026-11-13T15:14:35.729Z",
+    "at": "2026-11-13T15:27:05.286Z",
     "failed": [
-      {
-        "url": "https://www.coloradomesa.edu/images/svg/ui/arrow-right-white.svg",
-        "why": "HTTP 404"
-      },
       {
         "url": "https://www.coloradomesa.edu/images/svg/ui/arrow-right-white.svg",
         "why": "HTTP 404",

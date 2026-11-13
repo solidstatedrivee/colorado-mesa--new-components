@@ -56,6 +56,7 @@ Page order in the content type:
 .
 ├── README.md
 ├── AGENTS.md                       # rules for AI agents / contributors
+├── index.html                      # dev index linking every variation page
 ├── client-provided/                # client spec + mockup (read-only)
 ├── assets/
 │   ├── css/
@@ -65,7 +66,6 @@ Page order in the content type:
 │       ├── modal-cards.js
 │       └── image-grid.js
 ├── components/
-│   ├── index.html                  # dev index linking every variation page
 │   ├── _template.html              # page shell to copy for new variation pages
 │   ├── 01-hero/                    # every variation as its own page
 │   ├── 02-icon-cards/
@@ -108,7 +108,7 @@ Serve the **repo root** over HTTP (Lottie JSON and some fonts won't load from `f
 
 ```bash
 python3 -m http.server 8000
-# http://localhost:8000/components/            ← index of every variation
+# http://localhost:8000/                       ← index of every variation
 # http://localhost:8000/components/01-hero/image--none.html
 # http://localhost:8000/www.coloradomesa.edu/reference-pages/homepage.html
 ```

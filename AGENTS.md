@@ -27,12 +27,12 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 | `components/04-two-column/` | 5 | `.cmu-two-col` | — |
 | `components/05-image-grid/` | 6 | `.cmu-image-grid` | `image-grid.js` |
 
-`components/full-page.html` assembles all of them in mockup order (it sits one level up, so its paths use `../` not `../../`). `components/index.html` links every variation page.
+`components/full-page.html` assembles all of them in mockup order (it sits one level up, so its paths use `../` not `../../`). `index.html` at the repo root links every variation page.
 
 ## Building a variation page
 
 - Planned variation pages already exist (scaffolded with a placeholder `<section class="cmu-…">` stub). Replace the stub inside `<main id="content">` with real markup; don't touch the rest of the shell.
-- New variation: copy an existing page in the same folder (or `components/_template.html` — homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts) and add it to `components/index.html`.
+- New variation: copy an existing page in the same folder (or `components/_template.html` — homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts) and add a link to it in the root `index.html`.
 - If the shell must change, change `_template.html` and every variation page together.
 - `components.css` loads **after** `style.css` and `home-styles-cmu.css`. Component JS loads **after** jQuery and Bootstrap.
 - Name pages lowercase-kebab describing the configuration: `3-cards.html`, `maroon-text-only.html`, `image-popup-video--video-modal.html` (`--` separates combined options).
@@ -90,7 +90,7 @@ Search tips: the captured HTML has lots of blank lines from Velocity templates. 
 ## Verifying your work
 
 ```bash
-python3 -m http.server 8000   # from repo root, then open http://localhost:8000/components/...
+python3 -m http.server 8000   # from repo root, then open http://localhost:8000/ (variation index)
 ```
 
 Before finishing, check every variation page of your component: renders without console errors, matches `mockup.jpg`, works at all breakpoints and by keyboard. In your summary, say which variations you checked and anything you couldn't verify.

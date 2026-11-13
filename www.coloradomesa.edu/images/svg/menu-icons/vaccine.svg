@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FDD200;}
+	.st1{fill:none;}
+	.st2{fill:#6B6B6B;}
+</style>
+<path class="st0" d="M27,31H7v16h20V31z M25,45H9V33h16V45z"/>
+<g>
+	<rect x="7" y="55" class="st1" width="4" height="2"/>
+	<rect x="3" y="51" class="st1" width="2" height="10"/>
+	<rect x="13" y="51" class="st1" width="2" height="10"/>
+	<rect x="47" y="55" class="st1" width="4" height="2"/>
+	<polygon class="st1" points="17,53 17,59 41.8,59 45,57.4 45,54.6 41.8,53 	"/>
+	<polygon class="st1" points="48.6,3 45.4,3 41.4,7 52.6,7 	"/>
+	<path class="st1" d="M27,22c0.6,0,1-0.4,1-1v-4c0-0.6-0.4-1-1-1h-1v4h-2v-4h-2v4h-2v-4h-2v4h-2v-4h-2v4h-2v-4h-2v4H8v-4H7
+		c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1H27z"/>
+	<path class="st1" d="M17,51h12V31.5c0-1.1-0.6-2.2-1.7-2.7L25,27.6V24H9v3.6l-2.3,1.2c-1,0.5-1.7,1.5-1.7,2.7V49h2v4h4v-4h6V51z"/>
+	<path class="st1" d="M54.3,20L50,18.8V15h-6v3.8L39.7,20c-1.6,0.4-2.7,1.9-2.7,3.5V51h5.2l4,2H53v2h4v-8.8V46h-6v-2h6v-2h-8v-2h8
+		v-2h-6v-2h6v-2h-8v-2h8v-2h-6v-2h6v-2h-8v-2h8v-0.5C57,21.9,55.9,20.4,54.3,20z"/>
+	<polygon class="st1" points="53.6,9 40.4,9 41.7,13 52.3,13 	"/>
+	<rect x="49" y="24" class="st0" width="8" height="2"/>
+	<rect x="51" y="28" class="st0" width="6" height="2"/>
+	<rect x="51" y="44" class="st0" width="6" height="2"/>
+	<rect x="20" y="16" class="st0" width="2" height="4"/>
+	<path class="st2" d="M59,55V23.5c0-2.5-1.7-4.8-4.1-5.5L52,17.2V15h1.7l2.4-7.3L49.4,1h-4.8l-6.7,6.7l2.4,7.3H42v2.2l-2.9,0.8
+		C36.7,18.8,35,21,35,23.5V51h-4V31.5c0-1.9-1.1-3.6-2.8-4.5L27,26.4V24c1.7,0,3-1.3,3-3v-4c0-1.7-1.3-3-3-3H7c-1.7,0-3,1.3-3,3v4
+		c0,1.7,1.3,3,3,3v2.4L5.8,27C4.1,27.9,3,29.6,3,31.5V49H1v14h6v-4h4v4h6v-2h25.2l4-2H53v-2h10v-2H59z M45.4,3h3.2l4,4H41.4L45.4,3z
+		 M41.7,13l-1.3-4h13.2l-1.3,4H41.7z M6,21v-4c0-0.6,0.4-1,1-1h1h2h2h2h2h2h2h2h2h2h1c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1H7
+		C6.4,22,6,21.6,6,21z M5,61H3V51h2V61z M11,57H7v-2h4V57z M15,61h-2V51h2V61z M11,49v4H7v-4H5V31.5c0-1.1,0.6-2.2,1.7-2.7L9,27.6
+		V24h16v3.6l2.3,1.2c1,0.5,1.7,1.5,1.7,2.7V51H17v-2H11z M45,57.4L41.8,59H17v-6h24.8l3.2,1.6V57.4z M51,57h-4v-2h4V57z M57,24v2v2
+		v2v2v2v2v2v2v2v2v2v0.2V55h-4v-2h-6.8l-4-2H37V23.5c0-1.6,1.1-3.1,2.7-3.5l4.3-1.2V15h6v3.8l4.3,1.2c1.6,0.4,2.7,1.9,2.7,3.5V24z"
+		/>
+	<rect x="24" y="16" class="st0" width="2" height="4"/>
+	<rect x="16" y="16" class="st0" width="2" height="4"/>
+	<rect x="8" y="16" class="st0" width="2" height="4"/>
+	<rect x="12" y="16" class="st0" width="2" height="4"/>
+	<rect x="49" y="32" class="st0" width="8" height="2"/>
+	<rect x="51" y="36" class="st0" width="6" height="2"/>
+	<rect x="49" y="40" class="st0" width="8" height="2"/>
+</g>
+</svg>

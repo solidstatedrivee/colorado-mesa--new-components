@@ -1,0 +1,22 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * pf-grand-gothik-variable:
+ *   - http://typekit.com/eulas/0000000000000000774f2b09
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2025-09-18 15:12:23 UTC"}*/
+
+@import url("../p.typekit.net/p.css");
+
+@font-face {
+font-family:"pf-grand-gothik-variable";
+src:url("af/99ee37/0000000000000000774f2b09/31/l.woff2") format("woff2"),url("af/99ee37/0000000000000000774f2b09/31/d.woff") format("woff"),url("af/99ee37/0000000000000000774f2b09/31/a") format("opentype");
+font-display:auto;font-style:normal;font-weight:100 900;font-stretch:normal;
+}
+
+.tk-pf-grand-gothik-variable { font-family: "pf-grand-gothik-variable",sans-serif; }

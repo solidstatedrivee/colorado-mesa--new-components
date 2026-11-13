@@ -1,0 +1,42 @@
+/*
+ * CMU New Content Type — Component Styles
+ * ---------------------------------------------------------------
+ * ONE combined stylesheet for every new component.
+ * Loads after style.css and home-styles-cmu.css.
+ *
+ * Rules (see AGENTS.md):
+ *  - Only edit the section for the component you own.
+ *  - Keep sections in this order; don't rename the headers.
+ *  - Prefix classes with `cmu-`, scope every rule under the component root.
+ *  - Don't restyle global selectors (h2, .button-link, #content section...).
+ *  - Mobile-first; check 576 / 768 / 992 / 1200px.
+ *
+ * Palette: maroon #860037 | yellow #FFD200 | charcoal #262e2f
+ * Gradient: linear-gradient(to right, #860037, #3F0444, #071944)
+ * Fonts:    headings "pf-grand-gothik-variable", body "Nunito Sans"
+ */
+
+
+/* ==== Shared ==== */
+/* Used by more than one component (e.g. maroon gradient: Hero below-hero + Two Column).
+   Coordinate before changing anything here. */
+
+
+/* ==== 01 Hero ==== */
+/* Root: .cmu-hero  (banner + optional .cmu-hero__below) */
+
+
+/* ==== 02 Icon Cards ==== */
+/* Root: .cmu-icon-cards */
+
+
+/* ==== 03 Modal Cards ==== */
+/* Root: .cmu-modal-cards */
+
+
+/* ==== 04 Two Column ==== */
+/* Root: .cmu-two-col  (modifiers: --yellow, --maroon, --text-left, --text-right, --text-only) */
+
+
+/* ==== 05 Image Grid ==== */
+/* Root: .cmu-image-grid */

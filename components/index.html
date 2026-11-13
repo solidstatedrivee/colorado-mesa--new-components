@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMU Components Index</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 16px;line-height:1.5;color:#262e2f;background:#fff}
+h1{color:#860037}h2{margin-top:2rem;border-bottom:2px solid #FFD200}code{color:#666;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>CMU New Content Type &mdash; Components</h1>
+<p>Dev index of every variation page. Serve the repo root (<code>python3 -m http.server 8000</code>) and open
+<code>http://localhost:8000/components/</code>. See README.md for specs.</p>
+<p><a href="full-page.html">Full page (all components, mockup order)</a></p>
+<h2>01-hero &middot; Hero</h2>
+<p>Banner (from reference-pages/banner-*.html) + optional below-hero. Mockup sections 1 + 2.</p>
+<ul>
+<li><a href="01-hero/image--none.html">Banner: image / Below-hero: none</a> <code>image--none.html</code></li>
+<li><a href="01-hero/image--video-modal.html">Banner: image / Below-hero: video modal</a> <code>image--video-modal.html</code></li>
+<li><a href="01-hero/image--link.html">Banner: image / Below-hero: link</a> <code>image--link.html</code></li>
+<li><a href="01-hero/image-popup-video--none.html">Banner: image + popup video / Below-hero: none</a> <code>image-popup-video--none.html</code></li>
+<li><a href="01-hero/image-popup-video--video-modal.html">Banner: image + popup video / Below-hero: video modal</a> <code>image-popup-video--video-modal.html</code></li>
+<li><a href="01-hero/image-popup-video--link.html">Banner: image + popup video / Below-hero: link</a> <code>image-popup-video--link.html</code></li>
+<li><a href="01-hero/video-background--none.html">Banner: video background / Below-hero: none</a> <code>video-background--none.html</code></li>
+<li><a href="01-hero/video-background--video-modal.html">Banner: video background / Below-hero: video modal</a> <code>video-background--video-modal.html</code></li>
+<li><a href="01-hero/video-background--link.html">Banner: video background / Below-hero: link</a> <code>video-background--link.html</code></li>
+</ul>
+<h2>02-icon-cards &middot; Icon Cards</h2>
+<p>White background icon cards. Base: homepage section.activities. Mockup section 3.</p>
+<ul>
+<li><a href="02-icon-cards/2-cards.html">2 cards</a> <code>2-cards.html</code></li>
+<li><a href="02-icon-cards/3-cards.html">3 cards</a> <code>3-cards.html</code></li>
+<li><a href="02-icon-cards/4-cards.html">4 cards</a> <code>4-cards.html</code></li>
+<li><a href="02-icon-cards/with-buttons.html">Buttons shown on all cards</a> <code>with-buttons.html</code></li>
+<li><a href="02-icon-cards/lottie-icons.html">Lottie (.json) icons</a> <code>lottie-icons.html</code></li>
+<li><a href="02-icon-cards/static-icons.html">Static image icons</a> <code>static-icons.html</code></li>
+</ul>
+<h2>03-modal-cards &middot; Modal Cards</h2>
+<p>Cards that open modals over value-circle/gradient/photo background. Base: homepage section.cmunow. Mockup section 4.</p>
+<ul>
+<li><a href="03-modal-cards/2-cards.html">2 cards (col-6)</a> <code>2-cards.html</code></li>
+<li><a href="03-modal-cards/3-cards.html">3 cards (col-4)</a> <code>3-cards.html</code></li>
+<li><a href="03-modal-cards/5-cards.html">5 cards (centered last row)</a> <code>5-cards.html</code></li>
+<li><a href="03-modal-cards/modal-video.html">Modal type: video</a> <code>modal-video.html</code></li>
+<li><a href="03-modal-cards/modal-content.html">Modal type: content</a> <code>modal-content.html</code></li>
+<li><a href="03-modal-cards/modal-block.html">Modal type: custom block</a> <code>modal-block.html</code></li>
+<li><a href="03-modal-cards/two-rows-on-page.html">Two Modal Cards rows on one page (unique ID check)</a> <code>two-rows-on-page.html</code></li>
+</ul>
+<h2>04-two-column &middot; Two Column</h2>
+<p>Full-width two-column layout, yellow or maroon. Mockup section 5.</p>
+<ul>
+<li><a href="04-two-column/yellow-text-left.html">Yellow background / text left</a> <code>yellow-text-left.html</code></li>
+<li><a href="04-two-column/yellow-text-right.html">Yellow background / text right</a> <code>yellow-text-right.html</code></li>
+<li><a href="04-two-column/yellow-text-only.html">Yellow background / text only (centered, narrow)</a> <code>yellow-text-only.html</code></li>
+<li><a href="04-two-column/maroon-text-left.html">Maroon background / text left</a> <code>maroon-text-left.html</code></li>
+<li><a href="04-two-column/maroon-text-right.html">Maroon background / text right</a> <code>maroon-text-right.html</code></li>
+<li><a href="04-two-column/maroon-text-only.html">Maroon background / text only (centered, narrow)</a> <code>maroon-text-only.html</code></li>
+</ul>
+<h2>05-image-grid &middot; Image Grid</h2>
+<p>Thumbnail grid with full-screen click-through viewer (images + YouTube). Mockup section 6.</p>
+<ul>
+<li><a href="05-image-grid/images-only.html">Images only</a> <code>images-only.html</code></li>
+<li><a href="05-image-grid/images-and-video.html">Images and YouTube videos</a> <code>images-and-video.html</code></li>
+<li><a href="05-image-grid/5-items.html">Minimum 5 items</a> <code>5-items.html</code></li>
+<li><a href="05-image-grid/many-items.html">Many items</a> <code>many-items.html</code></li>
+</ul>
+</body>
+</html>

@@ -30,7 +30,7 @@ Everything under the domain-named folders (`www.coloradomesa.edu/`, `maxcdn.boot
 
 | Mockup § | Component | Folder | Builds on (existing code) | Status |
 |---|---|---|---|---|
-| 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `div.intro` (`.digital-promo`, `.scroll-down`), `.video-popup`, `#VideoModal` | In progress (initial build) |
+| 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `div.intro` (`.digital-promo`, `.scroll-down`), `.video-popup`, `#VideoModal` | QA |
 | 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | Scaffolded |
 | 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | Scaffolded |
 | 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | new (maroon gradient shared with Hero) | Scaffolded |

@@ -351,17 +351,117 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Hero: Banner: video background / Below-hero: none ===== -->
-            <!-- Banner (from reference-pages/banner-*.html) + optional below-hero. Mockup sections 1 + 2. -->
-            <!-- Spec: README.md > Component specs > Hero. Root class: .cmu-hero -->
-            <section class="cmu-hero" aria-label="Hero">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Hero</h2>
-                    <p>Banner: video background / Below-hero: none &mdash; not built yet.</p>
-                </div>
-            </section>
-        </main>
+            <!-- ===== 01 Hero: banner video-background / below-hero none ===== -->
+            <div class="cmu-hero">
+            <!-- Banner: copied as-is from reference-pages/banner-video-background.html -->
+<section aria-label="Banner" class="banner banner-bg-vid tall-banner" style="min-height:500px;">
+
+        
+            <div class="banner-bg-vid-wrapper">
+                <div id="wrapper"></div>
+            </div>
+
+            <script src="../../www.coloradomesa.edu/js/jquery.tubular.1.0.js"></script>
+
+            <script>
+            $('document').ready(function() {
+                var options = { videoId: 'ScMzIvxBSi4', start: 0 };
+                $('#wrapper').tubular(options);
+            });
+            </script>
+
+        
+        <style>
+
+            .banner-bg-vid-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background-color: #262e2f;
+}
+
+.banner-upload-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    z-index: 0;
+}
+
+        </style>
+        
+	    	    				    
+
+<div class="container no-center">
+	    	        	            <img alt="alt" class="banner-logo mb-3" src="../../www.coloradomesa.edu/images/cmu-nike-logo-2026.svg" width="250"/>
+	        	    	        	    	        	    	        	    	        	    	        	    		<h1>Banner - Background Video with Popup Video | No Below-Hero</h1>
+		    				    		    		    <h2 class="divider-top">Banner subtitle</h2>
+    				    		    		    <p>Banner intro text</p>
+    				    		    		        		     <a class="button-link yellow arrow mt-3 mx-1" href="https://dev2020.coloradomesa.edu/test/hh-test/banner-image.html">CTA button text</a>
+    		         				    				    				
+
+    <button class="secondary-button-dk video-popup mt-3 tubular-pause  mx-1" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-target="#VideoModal" data-toggle="modal">
+
+        Watch Video <svg class="icon" width="18" height="18"><use xlink:href="#icon-watch-video"></use></svg>
+
+    </button>
+    
+    <script>
+$(document).on('show.bs.modal', '#VideoModal', function() {
+    var video = document.getElementById('banner-upload-video');
+
+    if (video) {
+        video.pause();
+    }
+});
+
+$(document).on('hidden.bs.modal', '#VideoModal', function() {
+    var video = document.getElementById('banner-upload-video');
+
+    if (video) {
+        video.play();
+    }
+});
+</script>
+
+        
+            		    	    		    	    		    	    		    	    		    	    		    		    <h3 class="text-white">Custom HTML Block</h3>
+<div class="col-sm-8">
+<div aria-label="Audience Menu" class="audience-menu" role="navigation">
+<ul class="nav navbar-nav">
+<li><a href="https://dev2020.coloradomesa.edu/future">Future Students</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/current/index">Current Students</a></li>
+<li><a href="https://www.supportingcmu.com/alumni">Alumni</a></li>
+<li><a href="https://www.coloradomesa.edu/community/index.html">Community</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/family/index">Family</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/faculty/index">Faculty &amp; Staff</a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-4">
+<div aria-label="Action Menu" class="action-menu" role="navigation">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://www.coloradomesa.edu/admissions/apply.html">Apply Online <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span> </a></li>
+<li><a href="https://www.supportingcmu.com/give">Give to CMU <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span> </a></li>
+</ul>
+</div>
+</div>
+    		    	        
+        	</div>			
+    <div class="overlay"></div>
+</section>
+            </div>
         </main>
         <footer>
             <div class="footer-left">

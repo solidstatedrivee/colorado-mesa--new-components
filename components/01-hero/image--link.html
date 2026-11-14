@@ -351,17 +351,70 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Hero: Banner: image / Below-hero: link ===== -->
-            <!-- Banner (from reference-pages/banner-*.html) + optional below-hero. Mockup sections 1 + 2. -->
-            <!-- Spec: README.md > Component specs > Hero. Root class: .cmu-hero -->
-            <section class="cmu-hero" aria-label="Hero">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Hero</h2>
-                    <p>Banner: image / Below-hero: link &mdash; not built yet.</p>
+            <!-- ===== 01 Hero: banner image / below-hero link-external ===== -->
+            <div class="cmu-hero cmu-hero--with-below">
+            <!-- Banner: copied as-is from reference-pages/banner-image.html -->
+<section aria-label="Banner" class="banner tall-banner" style="background-image:url(&quot;../../www.coloradomesa.edu/images/banners/default-banner.jpg&quot;)">
+    
+	    	    				    
+
+<div class="container no-center">
+	    	        	            <img alt="alt" class="banner-logo mb-3" src="../../www.coloradomesa.edu/images/cmu-nike-logo-2026.svg" width="250"/>
+	        	    	        	    	        	    	        	    	        	    	        	    		<h1>Banner - Image | Below-Hero Link</h1>
+		    				    		    		    <h2 class="divider-top">Banner subtitle</h2>
+    				    		    		    <p>Banner intro text</p>
+    				    		    		        		     <a class="button-link yellow arrow mt-3 mx-1" href="banner-image.html">CTA button text</a>
+    		         				    				    				
+        
+            		    	    		    	    		    	    		    	    		    	    		    		    <h3 class="text-white">Custom HTML Block</h3>
+<div class="col-sm-8">
+<div aria-label="Audience Menu" class="audience-menu" role="navigation">
+<ul class="nav navbar-nav">
+<li><a href="https://dev2020.coloradomesa.edu/future">Future Students</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/current/index">Current Students</a></li>
+<li><a href="https://www.supportingcmu.com/alumni">Alumni</a></li>
+<li><a href="https://www.coloradomesa.edu/community/index.html">Community</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/family/index">Family</a></li>
+<li><a href="https://dev2020.coloradomesa.edu/faculty/index">Faculty &amp; Staff</a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-4">
+<div aria-label="Action Menu" class="action-menu" role="navigation">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://www.coloradomesa.edu/admissions/apply.html">Apply Online <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span> </a></li>
+<li><a href="https://www.supportingcmu.com/give">Give to CMU <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span> </a></li>
+</ul>
+</div>
+</div>
+    		    	        
+        	</div>			
+    <div class="overlay"></div>
+</section>
+            <!-- Below-hero (optional). Base markup: homepage div.intro -->
+            <div class="intro cmu-hero__below" id="cmu-hero-below">
+                <!-- Left: background image + icon image + optional header, linked to modal video OR link -->
+                <div class="digital-promo cmu-hero__media" style="background-image:url(&quot;../../www.coloradomesa.edu/images/templates/home/cmu-tour.jpg&quot;)">
+                    <a class="cmu-hero__media-link cmu-hero__media-link--link" href="https://www.coloradomesa.edu/virtual-tour/index.html" target="_blank" rel="noopener">
+                        <span class="cmu-hero__media-title">Tour the District</span>
+                        <span aria-hidden="true" class="cmu-hero__link-arrow"><svg class="icon"><use xlink:href="#icon-arrow-right-white"></use></svg></span>
+                        <span class="sr-only">(opens in a new tab)</span>
+                    </a>
+                    <!-- "Picture yourself" graphic -->
+                    <div class="scroll-down d-none d-lg-block">
+                        <a class="scrolly" href="#cmu-hero-below"><img alt="Picture yourself here" height="73" src="../../www.coloradomesa.edu/images/hero/picture-yourself-here.svg" width="73"/></a>
+                    </div>
                 </div>
-            </section>
-        </main>
+                <!-- Right: above header text, header text, WYSIWYG -->
+                <div class="cmu-hero__text">
+                    <p class="small">Find yourself here</p>
+                    <h2>Bringing Western landscape to CMU.</h2>
+                    <div class="cmu-hero__wysiwyg">
+                        <p>The Formation District is where CMU&rsquo;s connection to the Western landscape becomes tangible. Named for the geologic formations visible from campus, the district uses architecture, viewsheds, art, gathering spaces and daily life to express the resilience, curiosity and human-scale spirit of western Colorado. It is a place that helps students and visitors feel where they are.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
         </main>
         <footer>
             <div class="footer-left">

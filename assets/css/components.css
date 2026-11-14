@@ -23,7 +23,185 @@
 
 
 /* ==== 01 Hero ==== */
-/* Root: .cmu-hero  (banner + optional .cmu-hero__below) */
+/* Root: .cmu-hero  (banner + optional .cmu-hero__below)
+ * Banner: section.banner from reference-pages/banner-*.html, used as-is (styled by style.css).
+ * Below-hero: homepage div.intro markup, so home-styles-cmu.css (body.home #content .intro …)
+ * supplies the gradient panel, pulled-up .digital-promo, .scroll-down badge and mobile stacking.
+ * Rules below only cover what differs from the homepage. */
+
+/* Room under the banner content for the pulled-up panel + badge (desktop only) */
+@media only screen and (min-width: 992px){
+    #content .cmu-hero--with-below section.banner.tall-banner{
+        padding-bottom: calc(15vh + 90px);
+    }
+}
+
+/* Left panel: lighter photo overlay than the homepage's 0.85 */
+body.home #content .cmu-hero__below .digital-promo{
+    background-position: center;
+}
+body.home #content .cmu-hero__below .digital-promo:after{
+    background-color: rgba(34,45,47,0.3);
+}
+
+/* Whole left panel is the click target (video modal or link) */
+/* Selector includes .digital-promo + a so it outranks home-styles'
+   `body.home #content .intro .digital-promo a { border-bottom: 1px dotted #fff }` —
+   the dotted underline is the site's text-link style, not wanted on a block link. */
+body.home #content .cmu-hero__below .digital-promo a.cmu-hero__media-link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 0;
+}
+body.home #content .cmu-hero__below .cmu-hero__media-link:focus{
+    outline: 3px solid #FFD200;
+    outline-offset: -6px;
+}
+body.home #content .cmu-hero__below .cmu-hero__play-icon{
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+@media (prefers-reduced-motion: no-preference){
+    body.home #content .cmu-hero__below .cmu-hero__play-icon{
+        transition: transform .2s ease-in-out;
+    }
+    body.home #content .cmu-hero__below .cmu-hero__media-link:hover .cmu-hero__play-icon,
+    body.home #content .cmu-hero__below .cmu-hero__media-link:focus .cmu-hero__play-icon{
+        transform: scale(1.1);
+    }
+}
+body.home #content .cmu-hero__below .cmu-hero__media-title{
+    display: block;
+    margin-top: 15px;
+    font-family: "pf-grand-gothik-variable", sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+@media only screen and (max-width: 1199px){
+    body.home #content .cmu-hero__below .cmu-hero__play-icon{
+        width: 60px;
+    }
+    body.home #content .cmu-hero__below .cmu-hero__media-title{
+        font-size: 1.25rem;
+    }
+}
+
+/* Link mode: no play icon; caption + arrow anchored bottom-left over a bottom fade,
+   so it reads as "go somewhere" rather than "play video". */
+body.home #content .cmu-hero__below .digital-promo a.cmu-hero__media-link--link{
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 25px 30px;
+    text-align: left;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%);
+}
+body.home #content .cmu-hero__below .cmu-hero__media-link--link .cmu-hero__media-title{
+    margin: 0 15px 0 0;
+}
+body.home #content .cmu-hero__below .cmu-hero__link-arrow{
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #FFD200;
+    border-radius: 50%;
+}
+body.home #content .cmu-hero__below .cmu-hero__link-arrow .icon{
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+}
+body.home #content .cmu-hero__below .cmu-hero__media-link--link:hover .cmu-hero__link-arrow,
+body.home #content .cmu-hero__below .cmu-hero__media-link--link:focus .cmu-hero__link-arrow{
+    background-color: #FFD200;
+}
+body.home #content .cmu-hero__below .cmu-hero__media-link--link:hover .cmu-hero__link-arrow .icon,
+body.home #content .cmu-hero__below .cmu-hero__media-link--link:focus .cmu-hero__link-arrow .icon{
+    fill: #262e2f;
+}
+@media (prefers-reduced-motion: no-preference){
+    body.home #content .cmu-hero__below .cmu-hero__link-arrow{
+        transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+    }
+    body.home #content .cmu-hero__below .cmu-hero__media-link--link:hover .cmu-hero__link-arrow,
+    body.home #content .cmu-hero__below .cmu-hero__media-link--link:focus .cmu-hero__link-arrow{
+        transform: translateX(5px);
+    }
+}
+@media only screen and (max-width: 1199px){
+    body.home #content .cmu-hero__below .digital-promo a.cmu-hero__media-link--link{
+        padding: 20px;
+    }
+}
+
+/* Right column: replaces the homepage .animated-slider (same positioning) */
+body.home #content .cmu-hero__below .cmu-hero__text{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    padding: 0 4% 0 50px;
+    color: #fff;
+}
+body.home #content .cmu-hero__below .cmu-hero__text .small{
+    margin-bottom: 10px;
+    color: #FFD200;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+body.home #content .cmu-hero__below .cmu-hero__text h2{
+    margin: 0 0 15px;
+    color: #fff;
+}
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg,
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg p,
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg li{
+    color: #fff;
+}
+/* Site link convention on dark backgrounds: white dotted underline, solid on hover (cf. #content a.white) */
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg a{
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+}
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg a:hover,
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg a:focus{
+    color: #fff;
+    border-bottom-style: solid;
+}
+body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 991px){
+    body.home #content .cmu-hero__below .cmu-hero__text{
+        position: relative;
+        top: 0;
+        transform: none;
+        width: 100%;
+        padding: 30px 5px 0;
+    }
+}
 
 
 /* ==== 02 Icon Cards ==== */

@@ -30,7 +30,7 @@ Everything under the domain-named folders (`www.coloradomesa.edu/`, `maxcdn.boot
 
 | Mockup § | Component | Folder | Builds on (existing code) | Status |
 |---|---|---|---|---|
-| 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `#cmu-branded-hero`, `.scroll-down .scrolly`, `.video-popup`, `#VideoModal` | Scaffolded |
+| 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `div.intro` (`.digital-promo`, `.scroll-down`), `.video-popup`, `#VideoModal` | In progress (initial build) |
 | 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | Scaffolded |
 | 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | Scaffolded |
 | 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | new (maroon gradient shared with Hero) | Scaffolded |
@@ -148,7 +148,7 @@ Field lists come from the client spec; implementation notes are ours. Fields are
 
 One component: the custom-page banner on top, plus an **optional** below-hero section that overlaps the bottom of the banner.
 
-**Banner** — reuse markup from `banner-*.html` unchanged where possible (`section.banner.tall-banner`, `.banner-bg-vid`, `.video-popup` button, tubular init). Three layouts:
+**Banner** — the `section.banner` block from each `banner-*.html` page is used **as-is**, including every existing CMS option (logo, title, subtitle, intro, CTA, Watch Video button, **Custom HTML Block**, tubular init, inline modal scripts). Only asset paths are rewritten. The mockup's dual-styled title / image-under-text treatment is **not** used — the banner keeps its current layout. Three layouts:
 - `image` — background image
 - `image-popup-video` — background image + "Watch Video" popup button
 - `video-background` — YouTube background via tubular (or uploaded `<video id="banner-upload-video">`)
@@ -163,7 +163,34 @@ One component: the custom-page banner on top, plus an **optional** below-hero se
 | Header text (optional) | |
 | Action: **modal video** (YouTube ID → `#VideoModal`) **or link** (internal/external) | |
 
+Markup (base: homepage `div.intro`, so `home-styles-cmu.css` styles it under `body.home`):
+```html
+<div class="cmu-hero cmu-hero--with-below">         <!-- no --with-below when below-hero is omitted -->
+  <section class="banner …">…</section>             <!-- as-is from banner-*.html -->
+  <div class="intro cmu-hero__below" id="cmu-hero-below">
+    <div class="digital-promo cmu-hero__media" style="background-image:url(…)">
+      <a class="cmu-hero__media-link cmu-hero__media-link--video video-popup tubular-pause" data-src="…/embed/ID" data-target="#VideoModal" data-toggle="modal" href="#" role="button">
+        <img class="cmu-hero__play-icon" alt="" …>     <!-- icon image -->
+        <span class="cmu-hero__media-title">…</span>   <!-- optional header -->
+      </a>
+      <!-- link mode (no icon image; caption + arrow bottom-left):
+      <a class="cmu-hero__media-link cmu-hero__media-link--link" href="…">  (+ target="_blank" rel="noopener" if external)
+        <span class="cmu-hero__media-title">…</span>
+        <span aria-hidden="true" class="cmu-hero__link-arrow"><svg class="icon"><use xlink:href="#icon-arrow-right-white"></use></svg></span>
+      </a> -->
+      <div class="scroll-down d-none d-lg-block"><a class="scrolly" href="#cmu-hero-below"><img alt="Picture yourself here" …></a></div>
+    </div>
+    <div class="cmu-hero__text">
+      <p class="small">…</p> <h2>…</h2> <div class="cmu-hero__wysiwyg">…</div>
+    </div>
+  </div>
+</div>
+```
+
 Notes:
+- **Icon image is video-mode only.** Link mode drops it and uses a bottom-left caption + arrow so it doesn't look like a video.
+- No custom JS: `scripts.js` handles `.video-popup` → `#VideoModal`; `tubular-pause`/`tubular-play` pause the YouTube banner background; the banner's inline script pauses uploaded video.
+- The homepage `.intro` is a fixed 500px tall on desktop — keep below-hero WYSIWYG copy short or it will overflow.
 - Homepage source for the badge: `.scroll-down .scrolly` + `images/hero/picture-yourself-here.svg`.
 - Video triggers use the existing pattern: `data-src="https://www.youtube.com/embed/<ID>" data-target="#VideoModal" data-toggle="modal"`. There is one `#VideoModal` per page.
 - When the banner has a background video *and* a modal is opened, the background video must pause and resume (see the `show.bs.modal` / `hidden.bs.modal` handlers in `banner-image-popup-video.html`).
@@ -260,4 +287,32 @@ Variations: `images-only.html`, `images-and-video.html`, `5-items.html`, `many-i
 3. Check every variation at all breakpoints and with keyboard only.
 4. Add the component to `components/full-page.html` and compare against `client-provided/mockup.jpg`.
 5. Update the status column in the component map above.
-6. Hand off to the Cascade implementation.
+6. Add your component's entry to **Cascade implementation notes** below.
+7. Hand off to the Cascade implementation.
+
+---
+
+## Cascade implementation notes
+
+High-level list of what's **new**, **changed**, or **reused as-is** for the Cascade build. Update this as each component is finished.
+
+### Site-wide (all components)
+
+| Asset | Status | Notes |
+|---|---|---|
+| `assets/css/components.css` | **New** | Upload as a site CSS file. Link it in the new content type's template **after** `style.css` and `home-styles-cmu.css`. |
+| Content type template | **New** (copy of homepage) | Base it on the homepage template (`body.home`, `<main id="content">`, footer, `#VideoModal` region, homepage scripts). Leave out the homepage-only inline `#hero` `<style>` block. |
+| `assets/js/*.js` | Per component | Only upload the files a component says it needs (see below). |
+| `assets/images/sample/*` | **Prototype only** | Placeholder images. Don't upload; editors provide the real files. |
+
+### 01 · Hero
+
+| Asset | Status | Notes |
+|---|---|---|
+| Banner (custom page banner format/DD) | **Reused as-is** | Use the existing custom-page banner, all options included (image, popup video, background video, Custom HTML Block). Place it at the top of `<main id="content">`. |
+| Below-hero | **Changed: was hard-coded in the homepage format, now needs fields** | New optional DD group plus format output that matches the markup in [01 · Hero](#01--hero-mockup-1--2). Fields: picture-yourself graphic, background image, icon image (video only), header text, action (YouTube ID **or** internal/external link), above-header text, header text, WYSIWYG. |
+| Hero wrapper | **New markup** | `<div class="cmu-hero">` around the banner and below-hero. Add `cmu-hero--with-below` when below-hero is used. |
+| Link-mode class | **New markup** | Output `cmu-hero__media-link--video` or `cmu-hero__media-link--link` depending on the action. Leave out the icon image in link mode; add `target="_blank" rel="noopener"` for external links. |
+| `home-styles-cmu.css` (`.intro`, `.digital-promo`, `.scroll-down`) | **Reused as-is** | Gives the below-hero its base styling. No changes. |
+| `#VideoModal` region, `js/scripts.js`, `jquery.tubular` | **Reused as-is** | They already handle the video modal and pausing the background video. |
+| `assets/js/hero.js` | **Not needed** | Empty placeholder. Don't upload. |

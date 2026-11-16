@@ -34,7 +34,7 @@ Everything under the domain-named folders (`www.coloradomesa.edu/`, `maxcdn.boot
 | 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | QA |
 | 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | QA |
 | 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | homepage `section.testimonials` (yellow) and `.intro` (maroon, same as Hero below-hero) backgrounds | QA |
-| 6 | **Image Grid** — root `.cmu-image-grid` | `components/05-image-grid/` | new; Bootstrap 4 modal + carousel | Scaffolded |
+| 6 | **Image Grid** — root `.cmu-image-grid` | `components/05-image-grid/` | new; Bootstrap 4 modal + carousel | QA |
 | 7 | Footer | — | existing footer region, no work | n/a |
 
 Owners: _TBD — components will be divided between developers._
@@ -339,10 +339,37 @@ Reference behaviour: <https://www.thehotelmaverick.com/photos>. Grid of rounded 
   - Type: image or video
   - Image upload **or** YouTube ID (video items still need a thumbnail — use the YouTube poster `https://img.youtube.com/vi/<ID>/hqdefault.jpg` or an uploaded image)
   - Alt text
+- Popup options: show counter (yes/no), show captions (yes/no) — both default to yes
 
 Implementation: **Bootstrap 4 modal + carousel** (no new dependency). Open at the clicked index; keyboard arrows; Esc to close; swipe on touch; lazy-create YouTube iframes on slide and destroy/stop on slide-away and close. Only add a lightbox library if this proves inadequate (see dependency policy).
 
-Variations: `images-only.html`, `images-and-video.html`, `5-items.html`, `many-items.html`.
+Markup (the viewer is built by `image-grid.js`; the format only outputs the grid):
+```html
+<section aria-labelledby="cmu-image-grid-r1-heading" class="cmu-image-grid">   <!-- + cmu-image-grid--no-count and/or cmu-image-grid--no-captions -->
+  <div class="container">
+    <div class="small">…</div>                                       <!-- above-header text; omit if empty -->
+    <h2 id="cmu-image-grid-r1-heading">…</h2>
+    <ul class="cmu-image-grid__list">
+      <li><a class="cmu-image-grid__thumb" href="image.jpg" aria-haspopup="dialog"><img src="image.jpg" alt="…" loading="lazy" decoding="async"></a></li>
+      <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=ID" data-youtube="ID" aria-haspopup="dialog">
+            <img src="uploaded-thumb.jpg OR https://img.youtube.com/vi/ID/hqdefault.jpg" alt="…" loading="lazy" decoding="async">
+            <span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+    </ul>
+  </div>
+</section>
+```
+
+Notes:
+- **Grid:** square, rounded thumbnails; 5 across from 992px, 3 from 576px. Below 576px they stack in one column at 4:3 (the reference site also stacks on phones; full-width squares would make the section very tall). A last row that isn't full lines up from the left. The container widens to 1280px at 1200px+ to match the mockup (~226px thumbnails).
+- **Hover** follows the Maverick gallery: brand-color overlay (maroon at 80%) with the site's `popup-white.svg` expand icon and a zoom-in cursor. Hover styles only apply on devices with a mouse (`@media (hover: hover)`), so a tap never leaves the overlay stuck. Focus uses the component's own rings (maroon on the grid, yellow in the viewer) instead of style.css's blue `*:focus` glow, so there's one ring and no glow left after a mouse click.
+- **Viewer** (Maverick-style full screen, rebuilt with Bootstrap 4 modal + carousel; their fancybox-based script isn't reused): black full-screen modal, photo scaled to fit, prev/next buttons, close, and a `3 / 10` counter with the alt text as the caption (Maverick shows alt text as captions too). It's a live region and the dialog's description, so screen readers hear "3 / 10, caption" on open and on every change. The full-size image carries the alt text too. Arrow keys, swipe on touch devices (buttons are the non-swipe alternative), Esc, wrap-around; Tab/Shift+Tab stay inside the viewer (close, YouTube player when present, previous, next); focus returns to the thumbnail on close. Controls are 44px and never sit on the photo; the caption sits below the photo, so long or spaced-out captions shrink the photo instead of covering it.
+- **Popup options:** `cmu-image-grid--no-count` hides the `3 / 10` counter and `cmu-image-grid--no-captions` hides the caption. They're hidden visually only: the live region still tells screen reader users which item is showing. With both hidden, the photo takes the freed space.
+- **Videos** use a YouTube ID. Thumbnail: optional upload, otherwise YouTube's poster image. Clicking a video thumbnail plays it straight away (the link says "play video"). Arriving on a video with prev/next, arrows or swipe shows the poster with a Play button instead, so sound never starts unasked (WCAG 1.4.2); Play moves focus into the player. The iframe is removed when you leave the slide or close the viewer, so audio always stops.
+- **Images** load as their slide (or a neighbour) is reached, not up front. Thumbnail and full-screen image are the same uploaded file.
+- **Links work without JS:** each thumbnail links to the image (or YouTube page). Make the alt text field required in the DD; if it's ever empty, `image-grid.js` names the link "Photo 3 of 10" so it's never unlabelled.
+- `image-grid.js` appends one viewer per grid to `<body>` (`.cd-main-content` would otherwise trap it under the backdrop).
+
+Variations: all on **one page**, `all-variations.html`, each as its own labelled row: mockup (10 images), images + YouTube videos (uploaded and YouTube-poster thumbnails), 5-item minimum, many items (15, including full-size campus photos), last row not full (7 items; every other row is a multiple of 5), no above-header text, popup counter hidden, popup captions hidden, both hidden.
 
 ---
 
@@ -423,3 +450,13 @@ High-level list of what's **new**, **changed**, or **reused as-is** for the Casc
 | `#VideoModal` region, `js/scripts.js` (`.video-popup`), `jquery.tubular` (`tubular-pause`) | **Reused as-is** | Video cards use the same pattern as the homepage testimonial. |
 | `patterns/dignity.png`, `patterns/resilence.png` | **Reused as-is** | Same files the homepage CMUnow section uses. |
 | `assets/images/sample/modal-cards-*.jpg` | **Prototype only** | Cropped from the client mockup. Don't upload. |
+
+### 05 · Image Grid
+
+| Asset | Status | Notes |
+|---|---|---|
+| Image Grid row (DD group + format) | **New** | Fields: above-header text, header text, show counter (yes/no, default yes), show captions (yes/no, default yes), items (5+) with type (image / video), image file, YouTube ID, optional video thumbnail, alt text (required). "No" adds `cmu-image-grid--no-count` / `cmu-image-grid--no-captions` to the section. Format outputs only the grid markup in [05 · Image Grid](#05--image-grid-mockup-6). The thumbnail and the full-screen view use the same uploaded file, so ask editors for web-sized images (about 1600px on the long side) rather than camera originals. |
+| `assets/js/image-grid.js` | **Needed** | Upload and load after jQuery and Bootstrap. Builds the full-screen viewer for each grid. |
+| `assets/css/components.css` (05 section) | **New** | The expand-icon path is relative to `assets/css/` for the prototype (`../../www.coloradomesa.edu/images/svg/sprite-files-ui/ui/popup-white.svg`); point it at the live `/images/svg/sprite-files-ui/ui/popup-white.svg`. |
+| Bootstrap 4.4.1 modal + carousel | **Reused as-is** | Already on the homepage template; no new library. |
+| `assets/images/sample/image-grid-*.jpg` | **Prototype only** | Cropped from the client mockup. Don't upload. |

@@ -707,3 +707,340 @@ body.home #content .cmu-two-col .cmu-two-col__heading{
 
 /* ==== 05 Image Grid ==== */
 /* Root: .cmu-image-grid */
+
+#content .cmu-image-grid{
+    padding: 70px 0;
+    text-align: center;
+    background-color: #fff;
+}
+@media only screen and (max-width: 540px){
+    #content .cmu-image-grid{
+        padding: 30px 0;
+    }
+}
+@media only screen and (min-width: 1200px){
+    #content .cmu-image-grid > .container{
+        max-width: 1280px;
+    }
+}
+#content .cmu-image-grid__list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+}
+@media only screen and (min-width: 576px){
+    #content .cmu-image-grid__list{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+@media only screen and (min-width: 992px){
+    #content .cmu-image-grid__list{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+    }
+}
+#content .cmu-image-grid__list li{
+    margin: 0;
+}
+
+#content a.cmu-image-grid__thumb{
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 0;
+    border-radius: 15px;
+    cursor: zoom-in;
+}
+#content a.cmu-image-grid__thumb--video{
+    cursor: pointer;
+}
+/* style.css adds a blue box-shadow to every *:focus; these use their own ring */
+#content a.cmu-image-grid__thumb:focus{
+    outline: 3px solid #860037;
+    outline-offset: 3px;
+    box-shadow: none;
+}
+#content a.cmu-image-grid__thumb:focus:not(:focus-visible){
+    outline: none;
+}
+#content .cmu-image-grid__thumb img{
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+@media only screen and (max-width: 575.98px){
+    #content a.cmu-image-grid__thumb{
+        aspect-ratio: 4 / 3;
+    }
+}
+#content .cmu-image-grid__thumb::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(134,0,55,0.8) url("../../www.coloradomesa.edu/images/svg/sprite-files-ui/ui/popup-white.svg") center / 28px no-repeat;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+#content a.cmu-image-grid__thumb:focus-visible::after{
+    opacity: 1;
+}
+@media (hover: hover){
+    #content a.cmu-image-grid__thumb:hover::after{
+        opacity: 1;
+    }
+}
+@media (prefers-reduced-motion: reduce){
+    #content .cmu-image-grid__thumb::after{
+        transition: none;
+    }
+}
+
+#content .cmu-image-grid__play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    background: rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+#content .cmu-image-grid__play::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -6px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #fff;
+}
+#content .cmu-image-grid__thumb--video::after{
+    background-image: none;
+}
+
+/* Full-screen viewer (built by image-grid.js and appended to <body>) */
+/* style.css caps every .modal .modal-dialog at 800px */
+.modal.cmu-image-grid__viewer .modal-dialog{
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}
+.cmu-image-grid__viewer .modal-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    border-radius: 0;
+}
+.cmu-image-grid__viewer .carousel{
+    flex: 1 1 auto;
+    min-height: 0;
+}
+.cmu-image-grid__viewer .carousel-inner,
+.cmu-image-grid__viewer .carousel-item{
+    height: 100%;
+}
+.cmu-image-grid__slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 60px 90px 10px;
+}
+/* style.css sets .modal-content img { height: auto } */
+.cmu-image-grid__viewer .cmu-image-grid__full{
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: contain;
+}
+.cmu-image-grid__video{
+    width: 100%;
+    max-width: calc((100vh - 140px) * 16 / 9);
+    max-height: 100%;
+    aspect-ratio: 16 / 9;
+}
+.cmu-image-grid__video iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.cmu-image-grid__video iframe:focus{
+    box-shadow: none;
+}
+.cmu-image-grid__video .cmu-image-grid__frame--focus{
+    outline: 3px solid #FFD200;
+    outline-offset: 2px;
+}
+.cmu-image-grid__start{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    border: 0;
+    cursor: pointer;
+}
+.cmu-image-grid__viewer .cmu-image-grid__start img{
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+.cmu-image-grid__start-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    background: rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition: background-color .2s ease;
+}
+.cmu-image-grid__start-icon::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -14px 0 0 -8px;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 23px solid #fff;
+}
+.cmu-image-grid__start:focus-visible .cmu-image-grid__start-icon{
+    background-color: #860037;
+}
+@media (hover: hover){
+    .cmu-image-grid__start:hover .cmu-image-grid__start-icon{
+        background-color: #860037;
+    }
+}
+.cmu-image-grid__start:focus{
+    outline: 3px solid #FFD200;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+.cmu-image-grid__start:focus:not(:focus-visible){
+    outline: none;
+}
+@media (prefers-reduced-motion: reduce){
+    .cmu-image-grid__start-icon{
+        transition: none;
+    }
+}
+.cmu-image-grid__close{
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+@media (hover: hover){
+    .cmu-image-grid__close:hover{
+        opacity: .75;
+    }
+}
+.cmu-image-grid__viewer .carousel-control-prev.cmu-image-grid__nav,
+.cmu-image-grid__viewer .carousel-control-next.cmu-image-grid__nav{
+    top: 50%;
+    bottom: auto;
+    width: 56px;
+    height: 56px;
+    margin-top: -28px;
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
+    cursor: pointer;
+}
+.cmu-image-grid__viewer .carousel-control-prev.cmu-image-grid__nav{
+    left: 16px;
+}
+.cmu-image-grid__viewer .carousel-control-next.cmu-image-grid__nav{
+    right: 16px;
+}
+@media (hover: hover){
+    .cmu-image-grid__viewer .cmu-image-grid__nav:hover{
+        background-color: #860037;
+    }
+}
+.cmu-image-grid__viewer .cmu-image-grid__nav .carousel-control-prev-icon,
+.cmu-image-grid__viewer .cmu-image-grid__nav .carousel-control-next-icon{
+    width: 18px;
+    height: 18px;
+}
+.cmu-image-grid__close:focus,
+.cmu-image-grid__viewer .cmu-image-grid__nav:focus{
+    outline: 3px solid #FFD200;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+.cmu-image-grid__close:focus:not(:focus-visible),
+.cmu-image-grid__viewer .cmu-image-grid__nav:focus:not(:focus-visible){
+    outline: none;
+}
+.cmu-image-grid__status{
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 14px 90px 20px;
+    color: #fff;
+    font-size: .95rem;
+    text-align: center;
+}
+.cmu-image-grid__count{
+    margin-right: .75rem;
+    font-weight: 900;
+}
+.cmu-image-grid__status.cmu-image-grid__status--hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+@media only screen and (max-width: 767px){
+    .cmu-image-grid__slide{
+        padding: 56px 10px 62px;
+    }
+    .cmu-image-grid__viewer .carousel-control-prev.cmu-image-grid__nav,
+    .cmu-image-grid__viewer .carousel-control-next.cmu-image-grid__nav{
+        top: auto;
+        bottom: 8px;
+        width: 44px;
+        height: 44px;
+        margin-top: 0;
+    }
+    .cmu-image-grid__status{
+        padding: 6px 16px 16px;
+    }
+}

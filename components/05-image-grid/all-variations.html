@@ -3,7 +3,7 @@
 	<head>
 
 		<title>
-			Image Grid — Many items | CMU Components
+			Image Grid — all variations | CMU Components
 		</title>
 		<meta charset="utf-8"/>
 		<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -351,14 +351,197 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Image Grid: Many items ===== -->
-            <!-- Thumbnail grid with full-screen click-through viewer (images + YouTube). Mockup section 6. -->
-            <!-- Spec: README.md > Component specs > Image Grid. Root class: .cmu-image-grid -->
-            <section class="cmu-image-grid" aria-label="Image Grid">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Image Grid</h2>
-                    <p>Many items &mdash; not built yet.</p>
+            <!-- ===== Image Grid: all variations ===== -->
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 1 &middot; Mockup: 10 images</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r1-heading" class="cmu-image-grid">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r1-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-charcuterie.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-charcuterie.jpg" alt="Charcuterie board and cocktails" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-centennial-apartments.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-centennial-apartments.jpg" alt="Centennial Apartments courtyard" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-food-bowls.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-food-bowls.jpg" alt="Bowls of fresh food" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-bear-sculpture.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-bear-sculpture.jpg" alt="Bronze bear sculpture" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-asteria-theatre.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Asteria Theatre entrance" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-davis-house-firepit.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-davis-house-firepit.jpg" alt="Fire pit and lawn chairs outside Davis House" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 2 &middot; Images and YouTube videos (one with an uploaded thumbnail, one using YouTube&#x27;s poster)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r2-heading" class="cmu-image-grid">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r2-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=ScMzIvxBSi4" data-youtube="ScMzIvxBSi4" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Tour of the Formation District" loading="lazy" decoding="async"/><span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-charcuterie.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-charcuterie.jpg" alt="Charcuterie board and cocktails" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-centennial-apartments.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-centennial-apartments.jpg" alt="Centennial Apartments courtyard" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=9K3NpY0YadU" data-youtube="9K3NpY0YadU" aria-haspopup="dialog"><img src="https://img.youtube.com/vi/9K3NpY0YadU/hqdefault.jpg" alt="Student testimonial" loading="lazy" decoding="async"/><span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-food-bowls.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-food-bowls.jpg" alt="Bowls of fresh food" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-bear-sculpture.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-bear-sculpture.jpg" alt="Bronze bear sculpture" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 3 &middot; Minimum: 5 items</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r3-heading" class="cmu-image-grid">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r3-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-charcuterie.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-charcuterie.jpg" alt="Charcuterie board and cocktails" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 4 &middot; Many items: 15, including full-size campus photos</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r4-heading" class="cmu-image-grid">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r4-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-charcuterie.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-charcuterie.jpg" alt="Charcuterie board and cocktails" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-centennial-apartments.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-centennial-apartments.jpg" alt="Centennial Apartments courtyard" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-food-bowls.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-food-bowls.jpg" alt="Bowls of fresh food" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-bear-sculpture.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-bear-sculpture.jpg" alt="Bronze bear sculpture" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-asteria-theatre.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Asteria Theatre entrance" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-davis-house-firepit.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-davis-house-firepit.jpg" alt="Fire pit and lawn chairs outside Davis House" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" aria-haspopup="dialog"><img src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="Colorado Mesa University campus" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../www.coloradomesa.edu/images/templates/home/cmu-tour.jpg" aria-haspopup="dialog"><img src="../../www.coloradomesa.edu/images/templates/home/cmu-tour.jpg" alt="Students touring campus" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../www.coloradomesa.edu/images/templates/junction.jpg" aria-haspopup="dialog"><img src="../../www.coloradomesa.edu/images/templates/junction.jpg" alt="Downtown Grand Junction" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../www.coloradomesa.edu/images/templates/home/montrose-grad.jpg" aria-haspopup="dialog"><img src="../../www.coloradomesa.edu/images/templates/home/montrose-grad.jpg" alt="Graduate celebrating at commencement" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../www.coloradomesa.edu/images/templates/home/wccc-back.jpg" aria-haspopup="dialog"><img src="../../www.coloradomesa.edu/images/templates/home/wccc-back.jpg" alt="Western Colorado Community College campus" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 5 &middot; Last row not full: 7 items</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r5-heading" class="cmu-image-grid">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r5-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-charcuterie.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-charcuterie.jpg" alt="Charcuterie board and cocktails" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-centennial-apartments.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-centennial-apartments.jpg" alt="Centennial Apartments courtyard" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-food-bowls.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-food-bowls.jpg" alt="Bowls of fresh food" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 6 &middot; No above-header text</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r6-heading" class="cmu-image-grid">
+                <div class="container">
+                <h2 id="cmu-image-grid-r6-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-centennial-apartments.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-centennial-apartments.jpg" alt="Centennial Apartments courtyard" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-food-bowls.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-food-bowls.jpg" alt="Bowls of fresh food" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-bear-sculpture.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-bear-sculpture.jpg" alt="Bronze bear sculpture" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-asteria-theatre.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Asteria Theatre entrance" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-davis-house-firepit.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-davis-house-firepit.jpg" alt="Fire pit and lawn chairs outside Davis House" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 7 &middot; Popup counter hidden (captions shown)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r7-heading" class="cmu-image-grid cmu-image-grid--no-count">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r7-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=ScMzIvxBSi4" data-youtube="ScMzIvxBSi4" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Tour of the Formation District" loading="lazy" decoding="async"/><span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 8 &middot; Popup captions hidden (counter shown)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r8-heading" class="cmu-image-grid cmu-image-grid--no-captions">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r8-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=ScMzIvxBSi4" data-youtube="ScMzIvxBSi4" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Tour of the Formation District" loading="lazy" decoding="async"/><span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                </ul>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 9 &middot; Popup counter and captions both hidden</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-image-grid-r9-heading" class="cmu-image-grid cmu-image-grid--no-count cmu-image-grid--no-captions">
+                <div class="container">
+                <div class="small">Picture this</div>
+                <h2 id="cmu-image-grid-r9-heading">Living in the Landscape.</h2>
+                <ul class="cmu-image-grid__list">
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-hotel-maverick.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-hotel-maverick.jpg" alt="Hotel Maverick exterior" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-interior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb cmu-image-grid__thumb--video" href="https://www.youtube.com/watch?v=ScMzIvxBSi4" data-youtube="ScMzIvxBSi4" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-asteria-theatre.jpg" alt="Tour of the Formation District" loading="lazy" decoding="async"/><span class="cmu-image-grid__play" aria-hidden="true"></span><span class="sr-only">, play video</span></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-panera-bread.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-panera-bread.jpg" alt="Panera Bread counter" loading="lazy" decoding="async"/></a></li>
+                    <li><a class="cmu-image-grid__thumb" href="../../assets/images/sample/image-grid-ember-exterior.jpg" aria-haspopup="dialog"><img src="../../assets/images/sample/image-grid-ember-exterior.jpg" alt="Ember Eatery exterior in the afternoon sun" loading="lazy" decoding="async"/></a></li>
+                </ul>
                 </div>
             </section>
         </main>

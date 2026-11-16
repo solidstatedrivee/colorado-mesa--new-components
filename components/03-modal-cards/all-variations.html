@@ -3,7 +3,7 @@
 	<head>
 
 		<title>
-			Icon Cards — 2 cards | CMU Components
+			Modal Cards — all variations | CMU Components
 		</title>
 		<meta charset="utf-8"/>
 		<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -351,16 +351,754 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Icon Cards: 2 cards ===== -->
-            <!-- White background icon cards. Base: homepage section.activities. Mockup section 3. -->
-            <!-- Spec: README.md > Component specs > Icon Cards. Root class: .cmu-icon-cards -->
-            <section class="cmu-icon-cards" aria-label="Icon Cards">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Icon Cards</h2>
-                    <p>2 cards &mdash; not built yet.</p>
+            <!-- ===== Modal Cards: all variations ===== -->
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 1 &middot; Mockup: 6 cards, every modal type (Formation District)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r1-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r1-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r1-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-asteria-theatre.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-video-title="Asteria Theatre video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Asteria Theatre</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-hotel-maverick.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r1-c3" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Hotel Maverick</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-centennial-apartments.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r1-c4" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Centennial Apartments</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-davis-house.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r1-c5" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Davis House</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-art-walk.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/9K3NpY0YadU" data-video-title="Art Walk video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Art Walk</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r1-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r1-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r1-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r1-c3" tabindex="-1" role="dialog" aria-labelledby="modal-r1-c3-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r1-c3-title">Hotel Maverick</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: the image field is optional. When the content is taller than the screen, the whole dialog scrolls.</p>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.thehotelmaverick.com/">Visit Hotel Maverick</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r1-c4" tabindex="-1" role="dialog" aria-labelledby="modal-r1-c4-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r1-c4-title">Centennial Apartments</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h3>Floor plans</h3>
+                                    <p>Sample custom block with its own layout.</p>
+                                    <table class="table table-sm">
+                                        <caption class="sr-only">Sample floor plans</caption>
+                                        <thead><tr><th scope="col">Plan</th><th scope="col">Bedrooms</th></tr></thead>
+                                        <tbody><tr><td>Studio</td><td>1</td></tr><tr><td>Suite</td><td>2&ndash;4</td></tr></tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" title="Map of Colorado Mesa University" loading="lazy" src="https://www.google.com/maps?q=Colorado+Mesa+University&amp;output=embed"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r1-c5" tabindex="-1" role="dialog" aria-labelledby="modal-r1-c5-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r1-c5-title">Davis House</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a text-only modal with no image and no button.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 2 &middot; 2 cards (col-md-6)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r2-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r2-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-md-6 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r2-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-md-6 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-hotel-maverick.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r2-c2" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Hotel Maverick</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r2-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r2-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r2-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r2-c2" tabindex="-1" role="dialog" aria-labelledby="modal-r2-c2-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r2-c2-title">Hotel Maverick</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: the image field is optional. When the content is taller than the screen, the whole dialog scrolls.</p>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.thehotelmaverick.com/">Visit Hotel Maverick</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 3 &middot; 3 cards (col-lg-4)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r3-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r3-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r3-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-asteria-theatre.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-video-title="Asteria Theatre video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Asteria Theatre</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-hotel-maverick.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r3-c3" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Hotel Maverick</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r3-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r3-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r3-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r3-c3" tabindex="-1" role="dialog" aria-labelledby="modal-r3-c3-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r3-c3-title">Hotel Maverick</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: the image field is optional. When the content is taller than the screen, the whole dialog scrolls.</p>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.thehotelmaverick.com/">Visit Hotel Maverick</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 4 &middot; 5 cards: incomplete last row is centered</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r4-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r4-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r4-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-asteria-theatre.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-video-title="Asteria Theatre video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Asteria Theatre</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-hotel-maverick.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r4-c3" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Hotel Maverick</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-centennial-apartments.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r4-c4" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Centennial Apartments</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-davis-house.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r4-c5" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Davis House</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r4-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r4-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r4-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r4-c3" tabindex="-1" role="dialog" aria-labelledby="modal-r4-c3-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r4-c3-title">Hotel Maverick</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: the image field is optional. When the content is taller than the screen, the whole dialog scrolls.</p>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.thehotelmaverick.com/">Visit Hotel Maverick</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r4-c4" tabindex="-1" role="dialog" aria-labelledby="modal-r4-c4-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r4-c4-title">Centennial Apartments</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h3>Floor plans</h3>
+                                    <p>Sample custom block with its own layout.</p>
+                                    <table class="table table-sm">
+                                        <caption class="sr-only">Sample floor plans</caption>
+                                        <thead><tr><th scope="col">Plan</th><th scope="col">Bedrooms</th></tr></thead>
+                                        <tbody><tr><td>Studio</td><td>1</td></tr><tr><td>Suite</td><td>2&ndash;4</td></tr></tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" title="Map of Colorado Mesa University" loading="lazy" src="https://www.google.com/maps?q=Colorado+Mesa+University&amp;output=embed"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r4-c5" tabindex="-1" role="dialog" aria-labelledby="modal-r4-c5-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r4-c5-title">Davis House</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a text-only modal with no image and no button.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 5 &middot; Modal type: video (shared #VideoModal)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r5-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r5-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/9K3NpY0YadU" data-video-title="Ember Eatery video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-asteria-theatre.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-video-title="Asteria Theatre video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Asteria Theatre</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-art-walk.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/9K3NpY0YadU" data-video-title="Art Walk video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Art Walk</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 6 &middot; Modal type: content (image + button / wide, no image / text only)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r6-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r6-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r6-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-hotel-maverick.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r6-c2" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Hotel Maverick</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-davis-house.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r6-c3" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Davis House</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r6-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r6-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r6-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r6-c2" tabindex="-1" role="dialog" aria-labelledby="modal-r6-c2-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r6-c2-title">Hotel Maverick</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: the image field is optional. When the content is taller than the screen, the whole dialog scrolls.</p>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.thehotelmaverick.com/">Visit Hotel Maverick</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r6-c3" tabindex="-1" role="dialog" aria-labelledby="modal-r6-c3-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r6-c3-title">Davis House</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a text-only modal with no image and no button.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 7 &middot; Modal type: custom block (wide / standard / standard)</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r7-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                    <img class="cmu-modal-cards__photo" src="../../www.coloradomesa.edu/images/templates/campus-natural.jpg" alt="" loading="lazy" decoding="async"/>
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r7-heading">Explore the District</h2>
+                        <div class="cmu-modal-cards__intro"><p>See the amenities that form this distinct area of Colorado Mesa University.</p></div>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-centennial-apartments.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r7-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Centennial Apartments</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-art-walk.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r7-c2" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Art Walk</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-davis-house.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r7-c3" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Davis House</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r7-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r7-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r7-c1-title">Centennial Apartments</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h3>Floor plans</h3>
+                                    <p>Sample custom block with its own layout.</p>
+                                    <table class="table table-sm">
+                                        <caption class="sr-only">Sample floor plans</caption>
+                                        <thead><tr><th scope="col">Plan</th><th scope="col">Bedrooms</th></tr></thead>
+                                        <tbody><tr><td>Studio</td><td>1</td></tr><tr><td>Suite</td><td>2&ndash;4</td></tr></tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" title="Map of Colorado Mesa University" loading="lazy" src="https://www.google.com/maps?q=Colorado+Mesa+University&amp;output=embed"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r7-c2" tabindex="-1" role="dialog" aria-labelledby="modal-r7-c2-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r7-c2-title">Art Walk</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row text-left">
+                                <div class="col-md-6">
+                                    <h3>On the walk</h3>
+                                    <ul>
+                                        <li>Sample artwork</li>
+                                        <li>Sample artwork</li>
+                                        <li>Sample artwork</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>Getting there</h3>
+                                    <p>Sample custom block content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r7-c3" tabindex="-1" role="dialog" aria-labelledby="modal-r7-c3-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r7-c3-title">Davis House</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h3>Rooms</h3>
+                                    <p>Sample custom block with its own layout.</p>
+                                    <table class="table table-sm">
+                                        <caption class="sr-only">Sample floor plans</caption>
+                                        <thead><tr><th scope="col">Plan</th><th scope="col">Bedrooms</th></tr></thead>
+                                        <tbody><tr><td>Studio</td><td>1</td></tr><tr><td>Suite</td><td>2&ndash;4</td></tr></tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" title="Map of Davis House area" loading="lazy" src="https://www.google.com/maps?q=Colorado+Mesa+University&amp;output=embed"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 8 &middot; Optional fields empty: no background photo, no intro copy</p>
+                </div>
+            </div>
+            <section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r8-heading">
+                <div class="cmu-modal-cards__bg" aria-hidden="true">
+                </div>
+                <div class="container">
+                    <div class="cmu-modal-cards__header">
+                        <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r8-heading">More to Explore</h2>
+                    </div>
+                    <ul class="row justify-content-center cmu-modal-cards__grid">
+                        <li class="col-12 col-md-6 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-ember-eatery.jpg" alt="" loading="lazy" decoding="async"/>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r8-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Ember Eatery</span></button></h3>
+                            </div>
+                        </li>
+                        <li class="col-12 col-md-6 cmu-modal-cards__item">
+                            <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+                                <img class="cmu-modal-cards__img" src="../../assets/images/sample/modal-cards-asteria-theatre.jpg" alt="" loading="lazy" decoding="async"/>
+                                <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+                                <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-video-title="Asteria Theatre video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Asteria Theatre</span><span class="sr-only">, play video</span></button></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="modal fade cmu-modal-cards__modal" id="modal-r8-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r8-c1-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-r8-c1-title">Ember Eatery</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="cmu-modal-cards__modal-img" src="../../assets/images/sample/modal-cards-ember-interior.jpg" alt="Seating and serving stations inside Ember Eatery"/>
+                            <div class="cmu-modal-cards__modal-body">
+                                <p>Sample content: a short description of Ember Eatery, with hours, location and <a href="#">an inline link</a>. This area is the editor's WYSIWYG field.</p>
+                                <ul>
+                                    <li>Sample list item</li>
+                                    <li>Sample list item</li>
+                                </ul>
+                            </div>
+                            <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="https://www.coloradomesa.edu/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="footer-left">
@@ -1012,4 +1750,5 @@ Colorado Mesa University</p>
 		</button>
 	
 	<!-- site-snap: removed tracker script -->
+<script src="../../assets/js/modal-cards.js"></script>
 </body>

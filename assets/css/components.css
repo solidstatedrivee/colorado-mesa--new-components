@@ -207,9 +207,356 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
 /* ==== 02 Icon Cards ==== */
 /* Root: .cmu-icon-cards */
 
+#content .cmu-icon-cards__intro{
+    max-width: 760px;
+    margin: 0 auto;
+}
+#content .cmu-icon-cards__intro p:last-child{
+    margin-bottom: 0;
+}
+
+/* home-styles-cmu.css reserves 90px for a button and styles the card as a link on hover */
+#content section.activities.cmu-icon-cards .bodymovin.hover{
+    padding-bottom: 30px;
+}
+#content section.activities.cmu-icon-cards .bodymovin.hover:hover{
+    cursor: auto;
+    background-color: #fff;
+}
+
+#content .cmu-icon-cards__card--static{
+    position: relative;
+    height: 100%;
+    margin-top: 20px;
+    padding: 170px 30px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+#content .cmu-icon-cards__icon{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 110px;
+    margin: 0 auto;
+}
+#content .cmu-icon-cards__card--static h3{
+    margin-top: 0;
+    color: #860037;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+#content .cmu-icon-cards__card--static p{
+    margin-bottom: 0;
+}
+
 
 /* ==== 03 Modal Cards ==== */
 /* Root: .cmu-modal-cards */
+
+#content .cmu-modal-cards{
+    position: relative;
+    isolation: isolate;
+    padding: clamp(60px, 10vw, 150px) 0;
+    color: #fff;
+    text-align: center;
+    background-color: #071944;
+}
+
+#content .cmu-modal-cards__bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: #fff;
+}
+#content .cmu-modal-cards__photo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+#content .cmu-modal-cards__bg::before,
+#content .cmu-modal-cards__bg::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#content .cmu-modal-cards__bg::before{
+    z-index: 1;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0) 50%, #000 100%),
+        linear-gradient(to right, #860037, #3F0444, #071944);
+    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
+}
+#content .cmu-modal-cards__bg::after{
+    z-index: 2;
+    background:
+        url("../../www.coloradomesa.edu/images/patterns/dignity.png") left -200px top 40px / 600px auto no-repeat,
+        url("../../www.coloradomesa.edu/images/patterns/resilence.png") right -200px top 40px / 600px auto no-repeat;
+    mix-blend-mode: overlay;
+}
+@media only screen and (max-width: 767px){
+    #content .cmu-modal-cards__bg::after{
+        background-size: 400px auto, 400px auto;
+    }
+}
+
+#content .cmu-modal-cards__header{
+    max-width: 760px;
+    margin: 0 auto;
+}
+#content .cmu-modal-cards__heading{
+    margin: 0 0 .5rem;
+    color: #fff;
+    font-size: 2rem;
+}
+#content .cmu-modal-cards__intro,
+#content .cmu-modal-cards__intro p{
+    color: #fff;
+    font-size: 1.05rem;
+}
+#content .cmu-modal-cards__intro p:last-child{
+    margin-bottom: 0;
+}
+#content .cmu-modal-cards__intro a,
+#content .cmu-modal-cards__intro a:visited{
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+#content .cmu-modal-cards__intro a:hover{
+    border-bottom-style: solid;
+}
+@media only screen and (max-width: 767px){
+    #content .cmu-modal-cards__heading{
+        font-size: 1.6rem;
+    }
+}
+
+#content .cmu-modal-cards__grid{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 3.5rem;
+    margin-bottom: 0;
+}
+@media only screen and (min-width: 992px){
+    #content .cmu-modal-cards__grid{
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+#content .cmu-modal-cards__item{
+    padding-left: 15px;
+    padding-right: 15px; /* style.css removes the right gutter on .col-* */
+    margin-bottom: 22px;
+}
+
+#content .cmu-modal-cards__card{
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    aspect-ratio: 3 / 2;
+    padding: 0 12px 14px;
+    background-color: #262e2f;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+#content .cmu-modal-cards__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+#content .cmu-modal-cards__card::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 75%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0) 100%);
+    border-radius: 0 0 14px 14px;
+    pointer-events: none;
+}
+#content .cmu-modal-cards__title{
+    margin: 0;
+    color: #fff;
+    font-size: 1.15rem;
+    font-variation-settings: 'wdth' 125, 'wght' 800, 'ital' 0;
+    line-height: 1.15;
+    letter-spacing: .02em;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    #content .cmu-modal-cards__title{
+        font-size: 1rem;
+    }
+}
+#content .cmu-modal-cards__trigger{
+    display: block;
+    width: 100%;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    text-transform: inherit;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+#content .cmu-modal-cards__label{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+#content .cmu-modal-cards__trigger:focus{
+    outline: none;
+}
+#content .cmu-modal-cards__trigger:focus-visible::after{
+    outline: 3px solid #FFD200;
+    outline-offset: 4px;
+    border-radius: 15px;
+}
+
+@media (prefers-reduced-motion: no-preference){
+    #content .cmu-modal-cards__card{
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    #content .cmu-modal-cards__card:has(.cmu-modal-cards__trigger:focus-visible){
+        transform: scale(1.03);
+    }
+}
+@media (hover: hover){
+    #content .cmu-modal-cards__card:hover{
+        border-color: #860037;
+        box-shadow: 0 10px 26px rgba(0,0,0,0.6);
+    }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference){
+    #content .cmu-modal-cards__card:hover{
+        transform: scale(1.03);
+    }
+}
+
+#content .cmu-modal-cards__play{
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    background: rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    pointer-events: none;
+}
+#content .cmu-modal-cards__play::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin: -11px 0 0 -7px;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 18px solid #fff;
+}
+
+.cmu-modal-cards__modal .modal-content{
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cmu-modal-cards__modal .modal-header{
+    position: relative;
+    padding: 1.25rem 3.75rem 1rem 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+.cmu-modal-cards__modal .modal-title{
+    margin: 0;
+    color: #262e2f;
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+.modal.cmu-modal-cards__modal .modal-header button.close{
+    top: 50%;
+    right: 14px;
+    margin: -17.5px 0 0 0;
+    padding: 0;
+}
+
+/* style.css nudges the × up 2px */
+.modal.cmu-modal-cards__modal .modal-header button.close span{
+    margin-top: 0;
+}
+
+/* style.css removes the focus ring on modal close buttons */
+.modal.cmu-modal-cards__modal .modal-header button.close:focus{
+    outline: 3px solid #262e2f;
+    outline-offset: 2px;
+}
+.modal.cmu-modal-cards__modal .modal-header button.close:focus:not(:focus-visible){
+    outline: none;
+}
+.cmu-modal-cards__modal .modal-body{
+    padding: 1.5rem;
+}
+
+/* style.css caps every .modal .modal-dialog at 800px */
+@media (min-width: 1200px){
+    .modal.cmu-modal-cards__modal .modal-dialog.modal-xl{
+        max-width: 1140px;
+    }
+}
+.cmu-modal-cards__modal .cmu-modal-cards__modal-img{
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+}
+.cmu-modal-cards__modal-body > :last-child{
+    margin-bottom: 0;
+}
+.cmu-modal-cards__modal-cta{
+    margin: 1.25rem 0 0;
+}
 
 
 /* ==== 04 Two Column ==== */

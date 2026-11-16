@@ -1,22 +1,53 @@
-/*
- * 03 Modal Cards
- * Requires: jQuery 3.4.1, Bootstrap 4.4.1 (loaded by the page shell).
- *
- * Responsibilities:
- *  - Video cards: reuse the page's single #VideoModal (data-src / data-target / data-toggle).
- *  - Content / custom-block cards: open their own modal. IDs must be unique per row + card
- *    (e.g. modal-r2-c3) so multiple Modal Cards rows can live on one page.
- *  - Return focus to the triggering card on close.
- */
 (function ($) {
   'use strict';
 
-  function init(el, rowIndex) {
+  function stopMedia() {
+    $(this).find('iframe').each(function () {
+      var src = this.getAttribute('src');
+      if (src) {
+        this.setAttribute('src', src);
+      }
+    });
+    $(this).find('video, audio').each(function () {
+      this.pause();
+    });
+  }
+
+  function init(el) {
     var $row = $(el);
-    // TODO: implement
+
+    $row.find('.cmu-modal-cards__trigger[data-target^="#modal-"]').each(function () {
+      var $modal = $($(this).attr('data-target'));
+      // .cd-main-content (z-index + transform) traps modals under the backdrop; #VideoModal lives in <body> too
+      if ($modal.length && $modal.parent()[0] !== document.body) {
+        $modal.appendTo(document.body);
+      }
+      $modal.off('hidden.bs.modal.cmuModalCards').on('hidden.bs.modal.cmuModalCards', stopMedia);
+    });
+
+    $row.find('.cmu-modal-cards__trigger.video-popup').on('click', function () {
+      var title = $(this).data('video-title');
+      if (title) {
+        $('#VideoModal').attr('aria-label', title);
+        $('#video').attr('title', title);
+      }
+    });
   }
 
   $(function () {
-    $('.cmu-modal-cards').each(function (i) { init(this, i); });
+    var $rows = $('.cmu-modal-cards');
+    if (!$rows.length) {
+      return;
+    }
+
+    $rows.each(function () { init(this); });
+
+    var $videoModal = $('#VideoModal');
+    var originalLabel = $videoModal.attr('aria-label');
+    var originalTitle = $('#video').attr('title');
+    $videoModal.on('hidden.bs.modal', function () {
+      $videoModal.attr('aria-label', originalLabel);
+      $('#video').attr('title', originalTitle);
+    });
   });
 })(jQuery);

@@ -31,8 +31,8 @@ Everything under the domain-named folders (`www.coloradomesa.edu/`, `maxcdn.boot
 | Mockup § | Component | Folder | Builds on (existing code) | Status |
 |---|---|---|---|---|
 | 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `div.intro` (`.digital-promo`, `.scroll-down`), `.video-popup`, `#VideoModal` | QA |
-| 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | Scaffolded |
-| 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | Scaffolded |
+| 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | QA |
+| 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | QA |
 | 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | new (maroon gradient shared with Hero) | Scaffolded |
 | 6 | **Image Grid** — root `.cmu-image-grid` | `components/05-image-grid/` | new; Bootstrap 4 modal + carousel | Scaffolded |
 | 7 | Footer | — | existing footer region, no work | n/a |
@@ -212,10 +212,40 @@ White background. Base: homepage `section.activities`.
 - Cards: **2–4** → `col-lg-6` / `col-lg-4` / `col-lg-3`
   - Icon — single file field: `.json` → Lottie (`<div class="bodymovin hover" data-icon="…">`); anything else → `<img>`
   - Heading (text), Copy (text)
-- Show buttons: **one toggle for the whole row** — all cards have a button or none do
-  - Button text, Button link (per card)
+- ~~Show buttons~~ — **no buttons** (dropped from the client spec's optional per-row button toggle; matches the mockup)
 
-Variations: `2-cards.html`, `3-cards.html`, `4-cards.html`, `with-buttons.html`, `lottie-icons.html`, `static-icons.html`.
+Markup (homepage `section.activities` as-is, minus the buttons and `link-box`):
+```html
+<section aria-labelledby="cmu-icon-cards-r1-heading" class="activities cmu-icon-cards">
+  <div class="container">
+    <div class="small">…</div>                                         <!-- above-header text; omit if empty -->
+    <h2 id="cmu-icon-cards-r1-heading">…</h2>
+    <div class="cmu-icon-cards__intro">…</div>                          <!-- intro copy; omit if empty -->
+    <div class="row justify-content-center">
+      <div class="col-lg-4">                                            <!-- 2 cards: col-lg-6, 4 cards: col-lg-3 -->
+        <div class="bodymovin hover cmu-icon-cards__card" data-icon="…/icon.json">   <!-- .json icon -->
+          <h3>…</h3>
+          <p>…</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="cmu-icon-cards__card cmu-icon-cards__card--static">            <!-- any other icon file -->
+          <img class="cmu-icon-cards__icon" src="…" alt="" height="110">
+          <h3>…</h3>
+          <p>…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+Notes:
+- `home-styles-cmu.css` styles it under `body.home` (card layout, icon position, maroon uppercase `h3`). The 02 section of `components.css` only removes the 90px button space and the link-style hover (grey background + pointer), since the cards aren't links. Lottie icons still animate on hover.
+- Static image icons get the same size and position as Lottie icons. Icons are decorative (`alt=""`); the heading carries the meaning.
+- No new JS: the homepage's inline Lottie init (`.bodymovin.hover`) loads the icons.
+
+Variations: all on **one page**, `all-variations.html`, each as its own labelled row: mockup (3 cards, Lottie), 2 cards, 4 cards (Lottie + static mixed), static image icons, intro copy with no above-header text.
 
 ### 03 · Modal Cards (mockup §4)
 
@@ -231,7 +261,63 @@ Background has three layers: value-icon circles, gradient, and a black-and-white
     - **Custom block** — block chooser, escape hatch for custom HTML (mirrors the custom banner)
 - Content/block modals need their own modal markup with **unique IDs per row + card** (e.g. `modal-r2-c3`) so multiple Modal Cards rows on one page don't collide.
 
-Variations: `2-cards.html`, `3-cards.html`, `5-cards.html`, `modal-video.html`, `modal-content.html`, `modal-block.html`, `two-rows-on-page.html` (ID collision check).
+Markup (one row; `r1` = the row's position on the page, `c1` = the card's position in the row):
+```html
+<section class="cmu-modal-cards" aria-labelledby="cmu-modal-cards-r1-heading">
+  <div class="cmu-modal-cards__bg" aria-hidden="true">
+    <img class="cmu-modal-cards__photo" src="…" alt="" loading="lazy" decoding="async">   <!-- background image; omit if empty -->
+  </div>
+  <div class="container">
+    <div class="cmu-modal-cards__header">
+      <h2 class="cmu-modal-cards__heading" id="cmu-modal-cards-r1-heading">…</h2>
+      <div class="cmu-modal-cards__intro">…</div>                                   <!-- intro copy; omit if empty -->
+    </div>
+    <ul class="row justify-content-center cmu-modal-cards__grid">
+      <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">                  <!-- 2 cards: col-12 col-md-6 -->
+        <div class="cmu-modal-cards__card">
+          <img class="cmu-modal-cards__img" src="…" alt="" loading="lazy" decoding="async">
+          <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link" data-toggle="modal" data-target="#modal-r1-c1" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Title</span></button></h3>
+        </div>
+      </li>
+      <!-- video card: add cmu-modal-cards__card--video + play cue; trigger opens #VideoModal -->
+      <li class="col-12 col-sm-6 col-lg-4 cmu-modal-cards__item">
+        <div class="cmu-modal-cards__card cmu-modal-cards__card--video">
+          <img class="cmu-modal-cards__img" src="…" alt="" loading="lazy" decoding="async">
+          <span class="cmu-modal-cards__play" aria-hidden="true"></span>
+          <h3 class="cmu-modal-cards__title"><button type="button" class="cmu-modal-cards__trigger stretched-link video-popup tubular-pause" data-toggle="modal" data-target="#VideoModal" data-src="https://www.youtube.com/embed/ID" data-video-title="Title video" aria-haspopup="dialog"><span class="cmu-modal-cards__label">Title</span><span class="sr-only">, play video</span></button></h3>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- one per content / custom-block card (video cards use #VideoModal) -->
+<div class="modal fade cmu-modal-cards__modal" id="modal-r1-c1" tabindex="-1" role="dialog" aria-labelledby="modal-r1-c1-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">                  <!-- "Wide": modal-xl -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-r1-c1-title">Title</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <!-- content: <img class="cmu-modal-cards__modal-img" alt="…"> + <div class="cmu-modal-cards__modal-body">WYSIWYG</div>
+             + <p class="cmu-modal-cards__modal-cta"><a class="button-link" href="…">…</a></p>
+             custom block: the block's XHTML as-is -->
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Notes:
+- **Background:** the photo is an `<img>` (forced black and white with CSS). The cmunow gradients and value circles (`patterns/dignity.png`, `patterns/resilence.png`) are fixed layers in CSS, blended over it. No photo = plain gradient.
+- **Whole card is clickable** via Bootstrap's `.stretched-link` on the `<button>`, so the title stays a real `<h3>` and the card is one keyboard stop. The yellow focus ring is drawn around the whole card.
+- **Card images are decorative** (`alt=""`): the title names the button. The content modal's image has its own alt text field.
+- **Modal title = card title.** Content modal fields: optional image + alt, WYSIWYG, optional button (text + internal or external link), width (standard / wide).
+- **Long titles:** the title field is capped at 30 characters in the DD; CSS also stops titles at 3 lines as a safety net.
+- **`modal-cards.js` moves content/block modals to `<body>` on load.** `.cd-main-content` (position + `z-index: 2` + transform, for the mega menu) otherwise traps them under the body-level backdrop and blocks clicks. Nothing to change in Cascade output.
+- Video cards reuse `#VideoModal` exactly as the homepage does; `modal-cards.js` only names it after the card (e.g. "Asteria Theatre video") while open.
+
+Variations: all on **one page**, `all-variations.html`, each as its own labelled row: mockup (6 cards, every modal type), 2 cards, 3 cards, 5 cards (centered last row), video modals, content modals, custom-block modals, and empty optional fields (no photo, no intro). Having 8 rows on one page also checks that modal IDs stay unique.
 
 ### 04 · Two Column (mockup §5)
 
@@ -316,3 +402,24 @@ High-level list of what's **new**, **changed**, or **reused as-is** for the Casc
 | `home-styles-cmu.css` (`.intro`, `.digital-promo`, `.scroll-down`) | **Reused as-is** | Gives the below-hero its base styling. No changes. |
 | `#VideoModal` region, `js/scripts.js`, `jquery.tubular` | **Reused as-is** | They already handle the video modal and pausing the background video. |
 | `assets/js/hero.js` | **Not needed** | Empty placeholder. Don't upload. |
+
+### 02 · Icon Cards
+
+| Asset | Status | Notes |
+|---|---|---|
+| Icon Cards row (DD group + format) | **New** | Fields: above-header text, header text, intro (WYSIWYG), cards (2–4) with icon file, heading, copy. Format outputs `bodymovin hover` + `data-icon` for `.json` icons, `<img class="cmu-icon-cards__icon">` otherwise; `col-lg-6` / `col-lg-4` / `col-lg-3` by card count. No button fields. Output must match the markup in [02 · Icon Cards](#02--icon-cards-mockup-3). |
+| `home-styles-cmu.css` (`section.activities`, `.bodymovin.hover`) | **Reused as-is** | Base styling. |
+| Lottie 5.6.5 + homepage inline init script | **Reused as-is** | Already in the homepage template. |
+| `assets/css/components.css` (02 section) | **New** | Small overrides: no button space, no link-style hover, static icon cards. |
+
+### 03 · Modal Cards
+
+| Asset | Status | Notes |
+|---|---|---|
+| Modal Cards row (DD group + format) | **New** | Fields: background image, header text, intro (WYSIWYG), cards (2+) with image, title (max 30 characters), modal type (video / content / custom block) and the fields for that type: YouTube ID; or optional image + alt, WYSIWYG, optional button text + internal/external link; or block chooser. Width (standard / wide) for content and custom block. Output must match the markup in [03 · Modal Cards](#03--modal-cards-mockup-4). |
+| Modal IDs | **New markup** | `modal-r{row}-c{card}` and `cmu-modal-cards-r{row}-heading`, from the row's position on the page, so several Modal Cards rows can share a page. |
+| `assets/css/components.css` (03 section) | **New** | Pattern image paths are written relative to `assets/css/` for the prototype (`../../www.coloradomesa.edu/images/patterns/…`). Point them at the live `/images/patterns/dignity.png` and `/images/patterns/resilence.png` when uploading. |
+| `assets/js/modal-cards.js` | **Needed** | Upload and load after jQuery, Bootstrap and `scripts.js`. Moves content/block modals to `<body>` (required for mouse clicks inside them), names `#VideoModal` per card, stops media when a modal closes. |
+| `#VideoModal` region, `js/scripts.js` (`.video-popup`), `jquery.tubular` (`tubular-pause`) | **Reused as-is** | Video cards use the same pattern as the homepage testimonial. |
+| `patterns/dignity.png`, `patterns/resilence.png` | **Reused as-is** | Same files the homepage CMUnow section uses. |
+| `assets/images/sample/modal-cards-*.jpg` | **Prototype only** | Cropped from the client mockup. Don't upload. |

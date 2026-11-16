@@ -3,7 +3,7 @@
 	<head>
 
 		<title>
-			Icon Cards — 3 cards | CMU Components
+			Icon Cards — all variations | CMU Components
 		</title>
 		<meta charset="utf-8"/>
 		<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -351,14 +351,169 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Icon Cards: 3 cards ===== -->
-            <!-- White background icon cards. Base: homepage section.activities. Mockup section 3. -->
-            <!-- Spec: README.md > Component specs > Icon Cards. Root class: .cmu-icon-cards -->
-            <section class="cmu-icon-cards" aria-label="Icon Cards">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Icon Cards</h2>
-                    <p>3 cards &mdash; not built yet.</p>
+            <!-- ===== Icon Cards: all variations ===== -->
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 1 &middot; Mockup: 3 cards (col-lg-4), animated Lottie icons</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-icon-cards-r1-heading" class="activities cmu-icon-cards">
+                <div class="container">
+                <div class="small">Work hard, play hard</div>
+                <h2 id="cmu-icon-cards-r1-heading">One trip. Endless opportunities.</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/sup-dark.json">
+                            <h3>Go on an adventure</h3>
+                            <p>The Outdoor Program offers multiple outdoor trips per year. Equipment rentals also available.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/meet-people-dark.json">
+                            <h3>Connect with friends</h3>
+                            <p>Get involved! Student life offers thousands of on-campus activities, clubs and yearly concerts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/town-dark.json">
+                            <h3>Dine and stay</h3>
+                            <p>Take a stroll down historic Downtown Grand Junction for food, fun and seasonal festivities.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 2 &middot; 2 cards (col-lg-6)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-icon-cards-r2-heading" class="activities cmu-icon-cards">
+                <div class="container">
+                <div class="small">Work hard, play hard</div>
+                <h2 id="cmu-icon-cards-r2-heading">One trip. Endless opportunities.</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/sup-dark.json">
+                            <h3>Go on an adventure</h3>
+                            <p>The Outdoor Program offers multiple outdoor trips per year. Equipment rentals also available.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/meet-people-dark.json">
+                            <h3>Connect with friends</h3>
+                            <p>Get involved! Student life offers thousands of on-campus activities, clubs and yearly concerts.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 3 &middot; 4 cards (col-lg-3), mixing Lottie and static icons</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-icon-cards-r3-heading" class="activities cmu-icon-cards">
+                <div class="container">
+                <div class="small">Work hard, play hard</div>
+                <h2 id="cmu-icon-cards-r3-heading">One trip. Endless opportunities.</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/sup-dark.json">
+                            <h3>Go on an adventure</h3>
+                            <p>The Outdoor Program offers multiple outdoor trips per year. Equipment rentals also available.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/meet-people-dark.json">
+                            <h3>Connect with friends</h3>
+                            <p>Get involved! Student life offers thousands of on-campus activities, clubs and yearly concerts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/town-dark.json">
+                            <h3>Dine and stay</h3>
+                            <p>Take a stroll down historic Downtown Grand Junction for food, fun and seasonal festivities.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="cmu-icon-cards__card cmu-icon-cards__card--static">
+                            <img class="cmu-icon-cards__icon" src="../../www.coloradomesa.edu/images/svg/menu-icons/maps.svg" alt="" height="110"/>
+                            <h3>Find your way</h3>
+                            <p>Sample copy for a fourth card, using a static image icon next to the animated ones.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 4 &middot; Static image icons (any non-.json file)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-icon-cards-r4-heading" class="activities cmu-icon-cards">
+                <div class="container">
+                <div class="small">Work hard, play hard</div>
+                <h2 id="cmu-icon-cards-r4-heading">One trip. Endless opportunities.</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="cmu-icon-cards__card cmu-icon-cards__card--static">
+                            <img class="cmu-icon-cards__icon" src="../../www.coloradomesa.edu/images/svg/menu-icons/maps.svg" alt="" height="110"/>
+                            <h3>Go on an adventure</h3>
+                            <p>The Outdoor Program offers multiple outdoor trips per year. Equipment rentals also available.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cmu-icon-cards__card cmu-icon-cards__card--static">
+                            <img class="cmu-icon-cards__icon" src="../../www.coloradomesa.edu/images/svg/menu-icons/communication.svg" alt="" height="110"/>
+                            <h3>Connect with friends</h3>
+                            <p>Get involved! Student life offers thousands of on-campus activities, clubs and yearly concerts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cmu-icon-cards__card cmu-icon-cards__card--static">
+                            <img class="cmu-icon-cards__icon" src="../../www.coloradomesa.edu/images/svg/menu-icons/university-center.svg" alt="" height="110"/>
+                            <h3>Dine and stay</h3>
+                            <p>Take a stroll down historic Downtown Grand Junction for food, fun and seasonal festivities.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <div class="bg-light">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 5 &middot; Intro copy, no above-header text</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-icon-cards-r5-heading" class="activities cmu-icon-cards">
+                <div class="container">
+                <h2 id="cmu-icon-cards-r5-heading">One trip. Endless opportunities.</h2>
+                <div class="cmu-icon-cards__intro"><p>Sample intro copy: a sentence or two introducing the cards below.</p></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/sup-dark.json">
+                            <h3>Go on an adventure</h3>
+                            <p>The Outdoor Program offers multiple outdoor trips per year. Equipment rentals also available.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/meet-people-dark.json">
+                            <h3>Connect with friends</h3>
+                            <p>Get involved! Student life offers thousands of on-campus activities, clubs and yearly concerts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bodymovin hover cmu-icon-cards__card" data-icon="../../www.coloradomesa.edu/images/bodymovin/town-dark.json">
+                            <h3>Dine and stay</h3>
+                            <p>Take a stroll down historic Downtown Grand Junction for food, fun and seasonal festivities.</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </section>
         </main>

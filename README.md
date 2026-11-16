@@ -33,7 +33,7 @@ Everything under the domain-named folders (`www.coloradomesa.edu/`, `maxcdn.boot
 | 1 + 2 | **Hero** (banner + optional below-hero) — root `.cmu-hero` | `components/01-hero/` | `section.banner` from `banner-*.html`; homepage `div.intro` (`.digital-promo`, `.scroll-down`), `.video-popup`, `#VideoModal` | QA |
 | 3 | **Icon Cards** — root `.cmu-icon-cards` | `components/02-icon-cards/` | homepage `section.activities` + `.bodymovin` (Lottie) | QA |
 | 4 | **Modal Cards** — root `.cmu-modal-cards` | `components/03-modal-cards/` | homepage `section.cmunow` background treatment; `#VideoModal` | QA |
-| 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | new (maroon gradient shared with Hero) | Scaffolded |
+| 5 | **Two Column** — root `.cmu-two-col` | `components/04-two-column/` | homepage `section.testimonials` (yellow) and `.intro` (maroon, same as Hero below-hero) backgrounds | QA |
 | 6 | **Image Grid** — root `.cmu-image-grid` | `components/05-image-grid/` | new; Bootstrap 4 modal + carousel | Scaffolded |
 | 7 | Footer | — | existing footer region, no work | n/a |
 
@@ -56,7 +56,7 @@ Page order in the content type:
 .
 ├── README.md
 ├── AGENTS.md                       # rules for AI agents / contributors
-├── index.html                      # dev index linking every variation page
+├── index.html                      # dev index linking every component page
 ├── client-provided/                # client spec + mockup (read-only)
 ├── assets/
 │   ├── css/
@@ -66,8 +66,8 @@ Page order in the content type:
 │       ├── modal-cards.js
 │       └── image-grid.js
 ├── components/
-│   ├── _template.html              # page shell to copy for new variation pages
-│   ├── 01-hero/                    # every variation as its own page
+│   ├── _template.html              # page shell to copy for component pages
+│   ├── 01-hero/                    # one page per variation (Hero is fixed at the top, once per page)
 │   ├── 02-icon-cards/
 │   ├── 03-modal-cards/
 │   ├── 04-two-column/
@@ -77,11 +77,11 @@ Page order in the content type:
 └── <cdn domains>/ …                # captured third-party assets (read-only)
 ```
 
-> All folders, variation pages, `components.css`, and the JS files are scaffolded. Variation pages currently contain a placeholder `<section class="cmu-…">` stub — replace it with real markup.
+> All folders, `components.css`, and the JS files are scaffolded. Components not yet built may still have placeholder pages with a `<section class="cmu-…">` stub.
 
 ### Variation pages
 
-**Each component folder contains every variation as a separate page.** A variation is a meaningful configuration an editor can produce in Cascade (layout option, card count, modal type, etc.). File names are lowercase-kebab and describe the configuration, e.g. `3-cards.html`, `maroon-text-right.html`, `image--video-modal.html`. Planned variations are listed per component below.
+**Each component folder has one page, `all-variations.html`, with every variation as its own labelled row.** A variation is a meaningful configuration an editor can produce in Cascade (layout option, card count, modal type, empty optional fields, etc.). Putting several instances on one page also checks that IDs stay unique. A variation gets its own page only when it can't share a page with the others — e.g. the Hero, which is fixed at the top and appears once per page; those pages are named lowercase-kebab by configuration (`image--video-modal.html`). Variations are listed per component below.
 
 ### Page shell
 
@@ -98,7 +98,7 @@ Variation pages are built on the **homepage** shell so they load the same CSS/JS
 <script src="../../assets/js/<component>.js"></script>             <!-- after jQuery/Bootstrap -->
 ```
 
-All planned variation pages already exist as copies of the shell. To add a new variation, copy any existing page in that folder (or `_template.html`). If the shell itself needs to change, update `_template.html` **and** every variation page.
+To add a variation, add a labelled row to the component's `all-variations.html`. If the shell itself needs to change, update `_template.html` **and** every component page.
 
 ---
 
@@ -108,7 +108,7 @@ Serve the **repo root** over HTTP (Lottie JSON and some fonts won't load from `f
 
 ```bash
 python3 -m http.server 8000
-# http://localhost:8000/                       ← index of every variation
+# http://localhost:8000/                       ← index of every component page
 # http://localhost:8000/components/01-hero/image--none.html
 # http://localhost:8000/www.coloradomesa.edu/reference-pages/homepage.html
 ```
@@ -328,7 +328,7 @@ Full width. The mockup shows yellow + text-left + map image; the component has m
 - Content: Above-header text, Header text, WYSIWYG
 - Image: Image, Alt text (hidden when text-only)
 
-Variations: `{yellow,maroon}-text-{left,right,only}.html` (6 pages).
+Variations: all on **one page**, `all-variations.html`, each as its own labelled row: yellow and maroon × text left / text right / text only, plus empty optional field (no above-header text).
 
 ### 05 · Image Grid (mockup §6)
 
@@ -368,9 +368,9 @@ Variations: `images-only.html`, `images-and-video.html`, `5-items.html`, `many-i
 
 ## Workflow
 
-1. Pick up your assigned component; create its folder and variation pages from `_template.html`.
+1. Pick up your assigned component; build its `all-variations.html` from `_template.html`.
 2. Add styles to your section of `components.css`; add `assets/js/<component>.js` if needed.
-3. Check every variation at all breakpoints and with keyboard only.
+3. Check every variation (row) at all breakpoints and with keyboard only.
 4. Add the component to `components/full-page.html` and compare against `client-provided/mockup.jpg`.
 5. Update the status column in the component map above.
 6. Add your component's entry to **Cascade implementation notes** below.

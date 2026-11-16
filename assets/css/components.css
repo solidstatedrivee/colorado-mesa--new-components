@@ -560,7 +560,149 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
 
 
 /* ==== 04 Two Column ==== */
-/* Root: .cmu-two-col  (modifiers: --yellow, --maroon, --text-left, --text-right, --text-only) */
+/* Root: .cmu-two-col  (modifiers: --yellow, --maroon, --text-left, --text-right, --text-only)
+ * Rounded inset panel like the homepage .intro / section.testimonials.
+ * Backgrounds reuse the homepage values exactly:
+ *   yellow = section.testimonials (value4.svg + #FFD200 → #FFAF25)
+ *   maroon = .intro, i.e. Hero below-hero (value5.svg + #860037 → #3F0444 → #071944)
+ * DOM order is always text then image; --text-right only swaps visual order on desktop,
+ * so reading order and the mobile stack stay the same for every option. */
+
+#content .cmu-two-col{
+    position: relative;
+    margin: 10px;
+    padding: 50px 0;
+    border-radius: 10px;
+    color: #262e2f;
+}
+@media only screen and (min-width: 992px){
+    #content .cmu-two-col{
+        padding: 80px 0;
+    }
+}
+
+/* Backgrounds */
+#content .cmu-two-col--yellow{
+    background:
+        url("../../www.coloradomesa.edu/images/svg/values/value4.svg") no-repeat center right,
+        linear-gradient(270deg, #FFD200 31.73%, #FFAF25 100%);
+    background-size: 141%, cover;
+}
+#content .cmu-two-col--maroon{
+    color: #fff;
+    background:
+        url("../../www.coloradomesa.edu/images/svg/values/value5.svg") no-repeat center right -300px,
+        linear-gradient(225.71deg, #860037 6.36%, #3F0444 64.25%, #071944 87.71%);
+    background-size: 141%, cover;
+}
+
+/* Layout */
+#content .cmu-two-col__inner{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+@media only screen and (min-width: 992px){
+    #content .cmu-two-col__inner{
+        flex-direction: row;
+        align-items: flex-start; /* mockup: eyebrow lines up with the top of the image */
+        gap: 60px;
+    }
+    #content .cmu-two-col__text{
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+    #content .cmu-two-col__media{
+        flex: 0 0 40%;
+        min-width: 0;
+    }
+}
+@media only screen and (min-width: 1200px){
+    /* mockup content runs wider than Bootstrap's 1140px container */
+    #content .cmu-two-col:not(.cmu-two-col--text-only) .cmu-two-col__inner{
+        max-width: 1280px;
+    }
+    #content .cmu-two-col__media{
+        flex-basis: 38%;
+    }
+    #content .cmu-two-col--text-right .cmu-two-col__media{
+        order: -1;
+    }
+}
+
+/* Text only: centered, narrower column, no image */
+#content .cmu-two-col--text-only .cmu-two-col__inner{
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#content .cmu-two-col--text-only .cmu-two-col__media{
+    display: none;
+}
+
+/* Content */
+body.home #content .cmu-two-col .cmu-two-col__eyebrow{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+body.home #content .cmu-two-col--maroon .cmu-two-col__eyebrow{
+    color: #FFD200;
+}
+body.home #content .cmu-two-col .cmu-two-col__heading{
+    margin: 0 0 15px;
+    color: inherit;
+    line-height: 1.15;
+}
+#content .cmu-two-col__wysiwyg,
+#content .cmu-two-col__wysiwyg p,
+#content .cmu-two-col__wysiwyg li{
+    color: inherit;
+}
+@media only screen and (min-width: 992px){
+    #content .cmu-two-col__wysiwyg p,
+    #content .cmu-two-col__wysiwyg li{
+        font-size: 1.2rem;
+    }
+}
+#content .cmu-two-col__wysiwyg > :last-child{
+    margin-bottom: 0;
+}
+
+/* WYSIWYG links: site dotted-underline convention, colour per background */
+#content .cmu-two-col__wysiwyg a:not([class]){
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+}
+#content .cmu-two-col__wysiwyg a:not([class]):hover,
+#content .cmu-two-col__wysiwyg a:not([class]):focus{
+    border-bottom-style: solid;
+}
+#content .cmu-two-col--yellow .cmu-two-col__wysiwyg a:not([class]),
+#content .cmu-two-col--yellow .cmu-two-col__wysiwyg a:not([class]):hover,
+#content .cmu-two-col--yellow .cmu-two-col__wysiwyg a:not([class]):focus{
+    color: #262e2f;
+}
+#content .cmu-two-col--maroon .cmu-two-col__wysiwyg a:not([class]),
+#content .cmu-two-col--maroon .cmu-two-col__wysiwyg a:not([class]):hover,
+#content .cmu-two-col--maroon .cmu-two-col__wysiwyg a:not([class]):focus{
+    color: #fff;
+}
+#content .cmu-two-col a:focus-visible{
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Image */
+#content .cmu-two-col__img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+}
 
 
 /* ==== 05 Image Grid ==== */

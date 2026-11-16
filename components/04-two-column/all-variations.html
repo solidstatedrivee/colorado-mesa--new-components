@@ -3,7 +3,7 @@
 	<head>
 
 		<title>
-			Two Column — Maroon background / text only (centered, narrow) | CMU Components
+			Two Column — all variations | CMU Components
 		</title>
 		<meta charset="utf-8"/>
 		<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -351,14 +351,153 @@
         </div>
         <div class="cd-main-content">
         <main id="content">
-            <!-- ===== Two Column: Maroon background / text only (centered, narrow) ===== -->
-            <!-- Full-width two-column layout, yellow or maroon. Mockup section 5. -->
-            <!-- Spec: README.md > Component specs > Two Column. Root class: .cmu-two-col -->
-            <section class="cmu-two-col" aria-label="Two Column">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Two Column</h2>
-                    <p>Maroon background / text only (centered, narrow) &mdash; not built yet.</p>
+            <!-- ===== Two Column: all variations ===== -->
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 1 &middot; Mockup: yellow background, text left (Formation District map)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-1-heading" class="cmu-two-col cmu-two-col--yellow cmu-two-col--text-left">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Find yourself here</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-1-heading">West of campus. Central for you.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>The formation district is centrally located in Grand Junction, Colorado with a direct access from downtown.</p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Map of the Formation District just west of the Colorado Mesa University campus, between Elm Avenue and Bunting Avenue, showing Devil&rsquo;s Kitchen and Panera Bread along Kennedy Avenue." class="cmu-two-col__img" height="357" loading="lazy" src="../../assets/images/sample/two-col-map.jpg" width="557"/>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 2 &middot; Yellow background, text right</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-2-heading" class="cmu-two-col cmu-two-col--yellow cmu-two-col--text-right">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Find yourself here</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-2-heading">West of campus. Central for you.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>The formation district is centrally located in Grand Junction, Colorado with a direct access from downtown.</p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Map of the Formation District just west of the Colorado Mesa University campus, between Elm Avenue and Bunting Avenue, showing Devil&rsquo;s Kitchen and Panera Bread along Kennedy Avenue." class="cmu-two-col__img" height="357" loading="lazy" src="../../assets/images/sample/two-col-map.jpg" width="557"/>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 3 &middot; Yellow background, text only (centered, narrower, no image)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-3-heading" class="cmu-two-col cmu-two-col--yellow cmu-two-col--text-only">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Find yourself here</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-3-heading">West of campus. Central for you.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>The formation district is centrally located in Grand Junction, Colorado with a direct access from downtown.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 4 &middot; Maroon background (Hero below-hero gradient), text left</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-4-heading" class="cmu-two-col cmu-two-col--maroon cmu-two-col--text-left">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Named for the landscape</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-4-heading">Shaped by the formations around us.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>From campus you can see the sandstone monoliths of the Colorado National Monument rising above the Grand Valley. The Formation District borrows their colors, textures and sense of scale so the buildings feel like they belong here.</p>
+                            <p><a href="https://www.coloradomesa.edu/about/index.html">Learn more about CMU</a></p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Sunrise over Independence Monument and the red rock canyons of the Colorado National Monument." class="cmu-two-col__img" height="801" loading="lazy" src="../../www.coloradomesa.edu/images/templates/junction.jpg" width="1500"/>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 5 &middot; Maroon background, text right</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-5-heading" class="cmu-two-col cmu-two-col--maroon cmu-two-col--text-right">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Named for the landscape</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-5-heading">Shaped by the formations around us.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>From campus you can see the sandstone monoliths of the Colorado National Monument rising above the Grand Valley. The Formation District borrows their colors, textures and sense of scale so the buildings feel like they belong here.</p>
+                            <p><a href="https://www.coloradomesa.edu/about/index.html">Learn more about CMU</a></p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Sunrise over Independence Monument and the red rock canyons of the Colorado National Monument." class="cmu-two-col__img" height="801" loading="lazy" src="../../www.coloradomesa.edu/images/templates/junction.jpg" width="1500"/>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 6 &middot; Maroon background, text only (centered, narrower, no image)</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-6-heading" class="cmu-two-col cmu-two-col--maroon cmu-two-col--text-only">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Named for the landscape</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-6-heading">Shaped by the formations around us.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>From campus you can see the sandstone monoliths of the Colorado National Monument rising above the Grand Valley. The Formation District borrows their colors, textures and sense of scale so the buildings feel like they belong here.</p>
+                            <p><a href="https://www.coloradomesa.edu/about/index.html">Learn more about CMU</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-white">
+                <div class="container py-3">
+                    <p class="small mb-0">Row 7 &middot; Empty optional field: no above-header text</p>
+                </div>
+            </div>
+            <section aria-labelledby="cmu-two-col-7-heading" class="cmu-two-col cmu-two-col--yellow cmu-two-col--text-right">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-7-heading">West of campus. Central for you.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>The formation district is centrally located in Grand Junction, Colorado with a direct access from downtown.</p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Map of the Formation District just west of the Colorado Mesa University campus, between Elm Avenue and Bunting Avenue, showing Devil&rsquo;s Kitchen and Panera Bread along Kennedy Avenue." class="cmu-two-col__img" height="357" loading="lazy" src="../../assets/images/sample/two-col-map.jpg" width="557"/>
+                    </div>
                 </div>
             </section>
         </main>

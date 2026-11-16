@@ -11,8 +11,8 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 1. **Never edit captured site files.** Everything under `www.coloradomesa.edu/`, the CDN-domain folders (`maxcdn.bootstrapcdn.com/`, `use.typekit.net/`, `cdnjs.cloudflare.com/`, etc.), and `.site-snap/` is a read-only snapshot. Override in new files instead.
 2. **Never edit `client-provided/`.** It's the client's source material.
 3. **All new CSS goes in one file:** `assets/css/components.css`, inside the section for the component you're working on. Don't create per-component CSS files.
-4. **JS is per component, only if needed:** `assets/js/<component>.js` (e.g. `hero.js`, `image-grid.js`). No inline `<script>` blocks for component logic in variation pages.
-5. **Every component has its own folder in `components/`, and every variation is its own page** in that folder. See README for the planned variation list per component.
+4. **JS is per component, only if needed:** `assets/js/<component>.js` (e.g. `hero.js`, `image-grid.js`). No inline `<script>` blocks for component logic in component pages.
+5. **Every component has its own folder in `components/`, with all its variations on one page: `all-variations.html`**, one labelled row per variation. Split a variation onto its own page only when it can't share a page with the others (e.g. the Hero, which must be first on the page and appears once). See README for the variation list per component.
 6. **No new dependencies** unless the existing stack (Bootstrap 4.4.1, jQuery 3.4.1, Lottie 5.6.5, lazysizes) can't do the job. Stop and ask before adding one; never add a CDN link.
 7. **Stay in your lane.** Components are split between developers. Only touch your component's folder, its JS file, and its section of `components.css`. Changes to the `Shared` CSS section, `_template.html`, or `full-page.html` should be small and called out in your summary.
 8. Don't upgrade Bootstrap/jQuery or use Bootstrap 5 syntax (`data-bs-*`). This is Bootstrap 4: `data-toggle`, `data-target`, `.modal('show')`, etc.
@@ -27,16 +27,24 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 | `components/04-two-column/` | 5 | `.cmu-two-col` | — |
 | `components/05-image-grid/` | 6 | `.cmu-image-grid` | `image-grid.js` |
 
-`components/full-page.html` assembles all of them in mockup order (it sits one level up, so its paths use `../` not `../../`). `index.html` at the repo root links every variation page.
+`components/full-page.html` assembles all of them in mockup order (it sits one level up, so its paths use `../` not `../../`). `index.html` at the repo root links every component page.
 
-## Building a variation page
+## Building a component page
 
-- Planned variation pages already exist (scaffolded with a placeholder `<section class="cmu-…">` stub). Replace the stub inside `<main id="content">` with real markup; don't touch the rest of the shell.
-- New variation: copy an existing page in the same folder (or `components/_template.html` — homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts) and add a link to it in the root `index.html`.
-- If the shell must change, change `_template.html` and every variation page together.
+- One page per component: `components/<folder>/all-variations.html`, made from `components/_template.html` (homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts). Put the component markup inside `<main id="content">`; don't touch the rest of the shell. Link the page from the root `index.html`.
+- Each variation is its own row: a label strip, then the component section. Use the same label markup as the existing pages:
+  ```html
+  <div class="bg-white">
+      <div class="container py-3">
+          <p class="small mb-0">Row 2 &middot; Maroon background, text right</p>
+      </div>
+  </div>
+  ```
+- Several instances on one page doubles as the multiple-instances check, so make every ID unique per row (`…-r2-…` or `…-2-heading`).
+- Only give a variation its own page if it can't coexist with the others; name those lowercase-kebab describing the configuration (`image-popup-video--video-modal.html`, `--` separates combined options).
+- If the shell must change, change `_template.html` and every component page together.
 - `components.css` loads **after** `style.css` and `home-styles-cmu.css`. Component JS loads **after** jQuery and Bootstrap.
-- Name pages lowercase-kebab describing the configuration: `3-cards.html`, `maroon-text-only.html`, `image-popup-video--video-modal.html` (`--` separates combined options).
-- Put realistic content from the mockup in pages (Formation District copy, images from the captured site), and include empty/optional-field states as their own variations.
+- Put realistic content from the mockup in pages (Formation District copy, images from the captured site), and include empty/optional-field states as their own rows.
 
 ## Reuse existing code before writing new
 
@@ -90,10 +98,10 @@ Search tips: the captured HTML has lots of blank lines from Velocity templates. 
 ## Verifying your work
 
 ```bash
-python3 -m http.server 8000   # from repo root, then open http://localhost:8000/ (variation index)
+python3 -m http.server 8000   # from repo root, then open http://localhost:8000/ (component index)
 ```
 
-Before finishing, check every variation page of your component: renders without console errors, matches `mockup.jpg`, works at all breakpoints and by keyboard. In your summary, say which variations you checked and anything you couldn't verify.
+Before finishing, check every variation (row) of your component: renders without console errors, matches `mockup.jpg`, works at all breakpoints and by keyboard. In your summary, say which variations you checked and anything you couldn't verify.
 
 ## Git
 

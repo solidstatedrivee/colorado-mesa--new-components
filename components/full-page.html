@@ -590,11 +590,20 @@
             <!-- ===== Two Column: full page ===== -->
             <!-- Full-width two-column layout, yellow or maroon. Mockup section 5. -->
             <!-- Spec: README.md > Component specs > Two Column. Root class: .cmu-two-col -->
-            <section class="cmu-two-col" aria-label="Two Column">
-                <div class="container py-5 text-center">
-                    <p class="small">Scaffold</p>
-                    <h2>Two Column</h2>
-                    <p>full page &mdash; not built yet.</p>
+            <section aria-labelledby="cmu-two-col-1-heading" class="cmu-two-col cmu-two-col--yellow cmu-two-col--text-left">
+                <div class="container cmu-two-col__inner">
+                    <!-- Content section: above header text (optional), header text, WYSIWYG -->
+                    <div class="cmu-two-col__text">
+                        <p class="small cmu-two-col__eyebrow">Find yourself here</p>
+                        <h2 class="cmu-two-col__heading" id="cmu-two-col-1-heading">West of campus. Central for you.</h2>
+                        <div class="cmu-two-col__wysiwyg">
+                            <p>The formation district is centrally located in Grand Junction, Colorado with a direct access from downtown.</p>
+                        </div>
+                    </div>
+                    <!-- Image section (omitted when text only) -->
+                    <div class="cmu-two-col__media">
+                        <img alt="Map of the Formation District just west of the Colorado Mesa University campus, between Elm Avenue and Bunting Avenue, showing Devil&rsquo;s Kitchen and Panera Bread along Kennedy Avenue." class="cmu-two-col__img" height="357" loading="lazy" src="../assets/images/sample/two-col-map.jpg" width="557"/>
+                    </div>
                 </div>
             </section>
             <!-- ===== Image Grid: full page ===== -->

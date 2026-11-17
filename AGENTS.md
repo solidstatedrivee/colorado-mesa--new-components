@@ -111,6 +111,10 @@ python3 -m http.server 8000   # from repo root, then open http://localhost:8000/
 
 Before finishing, check every variation (row) of your component: renders without console errors, matches `mockup.jpg`, works at all breakpoints and by keyboard. In your summary, say which variations you checked and anything you couldn't verify.
 
+## QA
+
+QA notes live in `qa/` (one checklist + issue log per component; process in `qa/README.md`). Notes only: fix issues in the real component files and reference the issue number in the commit message (`(QA #3)`).
+
 ## Git
 
 - No branching: commit directly to `master`. Pull before you start and before you push — both developers share `master` and the single `components.css`.

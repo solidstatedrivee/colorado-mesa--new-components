@@ -7,13 +7,40 @@
 <style>
 body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 16px;line-height:1.5;color:#262e2f;background:#fff}
 h1{color:#860037}h2{margin-top:2rem;border-bottom:2px solid #FFD200}code{color:#666;font-size:.85em}
+.punch-list{background:#fdf6d8;border-left:4px solid #FFD200;padding:4px 20px 8px;margin:1.5rem 0}
+.punch-list h2{margin-top:1rem}.punch-list h3{font-size:1rem;margin:1.25rem 0 .25rem}.punch-list li{margin:.25rem 0}
+.punch-list .note{font-size:.9em;color:#555}
 </style>
 </head>
 <body>
 <h1>CMU New Content Type &mdash; Components</h1>
-<p>Dev index of every variation page. Serve the repo root (<code>python3 -m http.server 8000</code>) and open
-<code>http://localhost:8000/</code>. See README.md for specs.</p>
+<!-- Developer note: to preview locally, serve the repo root (python3 -m http.server 8000)
+     and open http://localhost:8000/. See README.md for specs. -->
+<p>Every version of each new component, plus a full page showing them all together.</p>
 <p><a href="components/full-page.html">Full page (all components, mockup order)</a></p>
+
+<section class="punch-list" aria-labelledby="punch-list-heading">
+<h2 id="punch-list-heading">Testing checklist</h2>
+<p>Please check each page below. If something looks wrong, note the page, the row label, your device and browser, and add a screenshot if you can.</p>
+<h3>On every page</h3>
+<ul>
+<li>Content and layout match the approved design.</li>
+<li>Nothing overlaps, gets cut off or is hard to read.</li>
+<li>It looks right on a phone, a tablet and a desktop.</li>
+<li>It works in Chrome, Safari, Firefox and Edge.</li>
+<li>All buttons and links go to the right place.</li>
+<li>You can use the page with just the keyboard: Tab to move, Enter to select, Esc to close pop-ups.</li>
+</ul>
+<h3>By component</h3>
+<ul>
+<li><strong>Hero:</strong> the banner image or background video shows, &ldquo;play&rdquo; buttons open the video, and the background video pauses while a video is open.</li>
+<li><strong>Icon cards:</strong> the icons animate when you hover over them.</li>
+<li><strong>Modal cards:</strong> each card opens its pop-up, the pop-up closes with the X, Esc or by clicking outside it, and videos stop when it closes.</li>
+<li><strong>Two column:</strong> the yellow and maroon versions, with text on the left and on the right, all look correct.</li>
+<li><strong>Image grid:</strong> clicking a photo opens it full screen, the arrows (or arrow keys) move between photos and videos, and videos stop when you move on or close.</li>
+</ul>
+<p class="note">The round menu button in the bottom-left corner and the &ldquo;Row 1 &middot; &hellip;&rdquo; labels above each example are only there to help with testing. They won&rsquo;t be on the live site.</p>
+</section>
 <h2>01-hero &middot; Hero</h2>
 <p>Banner (from reference-pages/banner-*.html) + optional below-hero. Mockup sections 1 + 2.</p>
 <ul>

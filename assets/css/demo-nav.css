@@ -1,0 +1,118 @@
+/* ==== Demo nav ====
+   DEMO ONLY - not part of the Cascade implementation.
+   Floating page switcher built by assets/js/demo-nav.js, which also loads this file. */
+
+.cmu-demo-nav{
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1040; /* below Bootstrap modals (1050) so popups cover it */
+    font-family: "Nunito Sans", sans-serif;
+}
+.cmu-demo-nav__toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 2px solid #FFD200;
+    border-radius: 50%;
+    background: #860037;
+    box-shadow: 0 2px 8px rgba(0,0,0,.35);
+    cursor: pointer;
+}
+.cmu-demo-nav__toggle:focus{
+    outline: 3px solid #FFD200;
+    outline-offset: 2px;
+}
+.cmu-demo-nav__bars,
+.cmu-demo-nav__bars::before,
+.cmu-demo-nav__bars::after{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    transition: transform .2s ease, background-color .2s ease;
+}
+.cmu-demo-nav__bars::before,
+.cmu-demo-nav__bars::after{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+.cmu-demo-nav__bars::before{ top: -6px; }
+.cmu-demo-nav__bars::after{ top: 6px; }
+.cmu-demo-nav.is-open .cmu-demo-nav__bars{ background: transparent; }
+.cmu-demo-nav.is-open .cmu-demo-nav__bars::before{ transform: translateY(6px) rotate(45deg); }
+.cmu-demo-nav.is-open .cmu-demo-nav__bars::after{ transform: translateY(-6px) rotate(-45deg); }
+.cmu-demo-nav__panel{
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    width: 300px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 12px 16px;
+    background: #fff;
+    color: #262e2f;
+    border-top: 4px solid #860037;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    text-align: left;
+}
+.cmu-demo-nav__panel[hidden]{ display: none; }
+.cmu-demo-nav__note{
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+.cmu-demo-nav__group{
+    margin: 10px 0 2px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #860037;
+}
+.cmu-demo-nav__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cmu-demo-nav__list li{
+    margin: 0;
+    padding: 0;
+}
+.cmu-demo-nav__list li::before{ content: none; }
+.cmu-demo-nav .cmu-demo-nav__link{
+    display: block;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #262e2f;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+}
+.cmu-demo-nav .cmu-demo-nav__link:hover,
+.cmu-demo-nav .cmu-demo-nav__link:focus{
+    background: #f3f3f3;
+    text-decoration: underline;
+}
+.cmu-demo-nav .cmu-demo-nav__link:focus{
+    outline: 2px solid #860037;
+    outline-offset: -2px;
+}
+.cmu-demo-nav .cmu-demo-nav__link[aria-current="page"]{
+    font-weight: 700;
+    border-left-color: #FFD200;
+    background: #fdf6d8;
+}
+@media (prefers-reduced-motion: reduce){
+    .cmu-demo-nav__bars,
+    .cmu-demo-nav__bars::before,
+    .cmu-demo-nav__bars::after{ transition: none; }
+}

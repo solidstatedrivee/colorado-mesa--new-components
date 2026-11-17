@@ -10,7 +10,7 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 
 1. **Never edit captured site files.** Everything under `www.coloradomesa.edu/`, the CDN-domain folders (`maxcdn.bootstrapcdn.com/`, `use.typekit.net/`, `cdnjs.cloudflare.com/`, etc.), and `.site-snap/` is a read-only snapshot. Override in new files instead.
 2. **Never edit `client-provided/`.** It's the client's source material.
-3. **All new CSS goes in one file:** `assets/css/components.css`, inside the section for the component you're working on. Don't create per-component CSS files.
+3. **All new CSS goes in one file:** `assets/css/components.css`, inside the section for the component you're working on. Don't create per-component CSS files. (Only exception: the demo nav's `assets/css/demo-nav.css`, see *Demo-only helpers*.)
 4. **JS is per component, only if needed:** `assets/js/<component>.js` (e.g. `hero.js`, `image-grid.js`). No inline `<script>` blocks for component logic in component pages.
 5. **Every component has its own folder in `components/`, with all its variations on one page: `all-variations.html`**, one labelled row per variation. Split a variation onto its own page only when it can't share a page with the others (e.g. the Hero, which must be first on the page and appears once). See README for the variation list per component.
 6. **No new dependencies** unless the existing stack (Bootstrap 4.4.1, jQuery 3.4.1, Lottie 5.6.5, lazysizes) can't do the job. Stop and ask before adding one; never add a CDN link.
@@ -31,7 +31,7 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 
 ## Building a component page
 
-- One page per component: `components/<folder>/all-variations.html`, made from `components/_template.html` (homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts). Put the component markup inside `<main id="content">`; don't touch the rest of the shell. Link the page from the root `index.html`.
+- One page per component: `components/<folder>/all-variations.html`, made from `components/_template.html` (homepage shell: `body.home`, header, `<main id="content">`, footer, `#VideoModal`, homepage scripts). Put the component markup inside `<main id="content">`; don't touch the rest of the shell. Link the page from the root `index.html` **and** add it to the `PAGES` list at the top of `assets/js/demo-nav.js`.
 - Each variation is its own row: a label strip, then the component section. Use the same label markup as the existing pages:
   ```html
   <div class="bg-white">
@@ -45,6 +45,14 @@ Static HTML/CSS/JS prototypes of new components for a Colorado Mesa University C
 - If the shell must change, change `_template.html` and every component page together.
 - `components.css` loads **after** `style.css` and `home-styles-cmu.css`. Component JS loads **after** jQuery and Bootstrap.
 - Put realistic content from the mockup in pages (Formation District copy, images from the captured site), and include empty/optional-field states as their own rows.
+
+## Demo-only helpers (not for Cascade)
+
+These exist only to make the prototypes easier to review. Don't port them to Cascade, and don't style components around them.
+
+- **Demo nav:** floating hamburger button (bottom-left) on every component page that links all the variant pages. Logic in `assets/js/demo-nav.js`, styles in `assets/css/demo-nav.css` (the script loads the stylesheet itself). Each page includes it with one tag just before `</body>`: `<script src="../../assets/js/demo-nav.js"></script>` (`../` in `full-page.html`). `_template.html` already has it.
+- **Header logo** links to the root `index.html` (`../../index.html`, or `../index.html` in `full-page.html`) instead of the live homepage.
+- When you add, rename or remove a page, update both `index.html` and the `PAGES` list in `demo-nav.js`.
 
 ## Reuse existing code before writing new
 

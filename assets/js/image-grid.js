@@ -14,7 +14,6 @@
 
     var total = $thumbs.length;
     var showCount = !$grid.hasClass('cmu-image-grid--no-count');
-    var showCaptions = !$grid.hasClass('cmu-image-grid--no-captions');
     var heading = $.trim($grid.find('h2').first().text()).replace(/[.!?:;,]+$/, '');
     var $trigger = $();
 
@@ -28,7 +27,7 @@
               '<button type="button" class="carousel-control-prev cmu-image-grid__nav"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></button>' +
               '<button type="button" class="carousel-control-next cmu-image-grid__nav"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></button>' +
             '</div>' +
-            '<p class="cmu-image-grid__status" aria-live="polite"><span class="cmu-image-grid__count"></span> <span class="cmu-image-grid__caption"></span></p>' +
+            '<p class="cmu-image-grid__status" aria-live="polite"><span class="cmu-image-grid__count"></span> <span class="cmu-image-grid__desc sr-only"></span> <span class="cmu-image-grid__caption"></span></p>' +
           '</div>' +
         '</div>' +
       '</div>'
@@ -40,10 +39,8 @@
       'aria-describedby': viewerId + '-status'
     });
     $viewer.find('.cmu-image-grid__status').attr('id', viewerId + '-status');
-    // Visually hidden only: screen readers still hear which item is showing
+    // Visually hidden only: screen readers still hear the position and alt text / video title
     $viewer.find('.cmu-image-grid__count').toggleClass('sr-only', !showCount);
-    $viewer.find('.cmu-image-grid__caption').toggleClass('sr-only', !showCaptions);
-    $viewer.find('.cmu-image-grid__status').toggleClass('cmu-image-grid__status--hidden', !showCount && !showCaptions);
 
     var $carousel = $viewer.find('.carousel');
     var $inner = $viewer.find('.carousel-inner');
@@ -58,7 +55,8 @@
           src: $thumb.attr('href'),
           youtube: $thumb.data('youtube'),
           poster: $thumb.find('img').attr('src'),
-          alt: $thumb.find('img').attr('alt') || ''
+          alt: $.trim($thumb.find('img').attr('alt') || ''),
+          caption: $.trim($thumb.attr('data-caption') || '')
         })
         .appendTo($inner);
     });
@@ -128,7 +126,11 @@
       loadImage(i - 1);
       loadImage(i + 1);
       $viewer.find('.cmu-image-grid__count').text(((i % total) + 1) + ' / ' + total);
-      $viewer.find('.cmu-image-grid__caption').text(item(i).data('alt'));
+      var alt = item(i).data('alt');
+      var caption = item(i).data('caption');
+      $viewer.find('.cmu-image-grid__desc').text(alt && !/[.!?]$/.test(alt) ? alt + '.' : alt);
+      $viewer.find('.cmu-image-grid__caption').text(caption);
+      $viewer.find('.cmu-image-grid__status').toggleClass('cmu-image-grid__status--hidden', !showCount && !caption);
     }
 
     $carousel.carousel({ interval: false, keyboard: false, wrap: true, touch: true });

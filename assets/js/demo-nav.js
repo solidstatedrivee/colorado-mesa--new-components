@@ -22,7 +22,10 @@
             ['components/01-hero/image-popup-video--link.html', 'Image + popup video / link'],
             ['components/01-hero/video-background--none.html', 'Video background / no below-hero'],
             ['components/01-hero/video-background--video-modal.html', 'Video background / video modal'],
-            ['components/01-hero/video-background--link.html', 'Video background / link']
+            ['components/01-hero/video-background--link.html', 'Video background / link'],
+            ['components/01-hero/video-background-upload--none.html', 'Uploaded video background / no below-hero'],
+            ['components/01-hero/video-background-upload--video-modal.html', 'Uploaded video background / video modal'],
+            ['components/01-hero/video-background-upload--link.html', 'Uploaded video background / link']
         ] },
         { group: 'Other components', items: [
             ['components/02-icon-cards/all-variations.html', '02 Icon Cards'],

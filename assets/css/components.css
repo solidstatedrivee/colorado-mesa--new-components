@@ -29,6 +29,75 @@
  * supplies the gradient panel, pulled-up .digital-promo, .scroll-down badge and mobile stacking.
  * Rules below only cover what differs from the homepage. */
 
+/* Subtitle at the banner's own size (style.css: #content section.banner h2 = 1.4rem);
+   on the home template body.home #content h2 (2.5rem) ties on specificity and loads later */
+body.home #content .cmu-hero section.banner h2{
+    font-size: 1.4rem;
+}
+
+/* Pause/play for an uploaded background video (added by hero.js) */
+#content .cmu-hero .cmu-hero__video-toggle{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#content .cmu-hero .cmu-hero__video-toggle-icon,
+#content .cmu-hero .cmu-hero__video-toggle-icon::before,
+#content .cmu-hero .cmu-hero__video-toggle-icon::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+/* Pause: two bars */
+#content .cmu-hero .cmu-hero__video-toggle-icon::before,
+#content .cmu-hero .cmu-hero__video-toggle-icon::after{
+    content: "";
+    width: 4px;
+    height: 14px;
+    margin-top: -7px;
+    background-color: #fff;
+}
+#content .cmu-hero .cmu-hero__video-toggle-icon::before{
+    margin-left: -6px;
+}
+#content .cmu-hero .cmu-hero__video-toggle-icon::after{
+    margin-left: 2px;
+}
+/* Play: triangle */
+#content .cmu-hero .cmu-hero__video-toggle.is-paused .cmu-hero__video-toggle-icon::before{
+    width: 0;
+    height: 0;
+    margin: -8px 0 0 -4px;
+    background: none;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid #fff;
+}
+#content .cmu-hero .cmu-hero__video-toggle.is-paused .cmu-hero__video-toggle-icon::after{
+    display: none;
+}
+@media (hover: hover){
+    #content .cmu-hero .cmu-hero__video-toggle:hover{
+        background-color: #860037;
+    }
+}
+#content .cmu-hero .cmu-hero__video-toggle:focus{
+    outline: 3px solid #FFD200;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+#content .cmu-hero .cmu-hero__video-toggle:focus:not(:focus-visible){
+    outline: none;
+}
+
 /* Room under the banner content for the pulled-up panel + badge (desktop only) */
 @media only screen and (min-width: 992px){
     #content .cmu-hero--with-below section.banner.tall-banner{
@@ -133,9 +202,10 @@ body.home #content .cmu-hero__below .cmu-hero__media-link--link:hover .cmu-hero_
 body.home #content .cmu-hero__below .cmu-hero__media-link--link:focus .cmu-hero__link-arrow{
     background-color: #FFD200;
 }
+/* Uses #icon-arrow-right (no fill on its path); #icon-arrow-right-white hard-codes fill="#fff" so CSS can't recolor it */
 body.home #content .cmu-hero__below .cmu-hero__media-link--link:hover .cmu-hero__link-arrow .icon,
 body.home #content .cmu-hero__below .cmu-hero__media-link--link:focus .cmu-hero__link-arrow .icon{
-    fill: #262e2f;
+    fill: #860037;
 }
 @media (prefers-reduced-motion: no-preference){
     body.home #content .cmu-hero__below .cmu-hero__link-arrow{
@@ -215,11 +285,11 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     margin-bottom: 0;
 }
 
-/* home-styles-cmu.css reserves 90px for a button and styles the card as a link on hover */
-#content section.activities.cmu-icon-cards .bodymovin.hover{
+/* home-styles-cmu.css reserves 90px for a button and styles the card as a link on hover; undo that when there are no links */
+#content section.activities.cmu-icon-cards:not(.cmu-icon-cards--links) .bodymovin.hover{
     padding-bottom: 30px;
 }
-#content section.activities.cmu-icon-cards .bodymovin.hover:hover{
+#content section.activities.cmu-icon-cards:not(.cmu-icon-cards--links) .bodymovin.hover:hover{
     cursor: auto;
     background-color: #fff;
 }
@@ -250,6 +320,22 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
 }
 #content .cmu-icon-cards__card--static p{
     margin-bottom: 0;
+}
+
+/* With links, static-icon cards match the homepage's .bodymovin.hover link cards */
+#content .cmu-icon-cards--links .cmu-icon-cards__card--static{
+    padding-bottom: 90px;
+}
+#content .cmu-icon-cards--links .cmu-icon-cards__card--static:hover{
+    background-color: #EBEFF4;
+}
+#content .cmu-icon-cards--links .cmu-icon-cards__card--static .secondary-button{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    margin: 0;
+    border: 1px solid black !important;
 }
 
 
@@ -355,6 +441,9 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     margin-top: 3.5rem;
     margin-bottom: 0;
 }
+#content .cmu-modal-cards__grid:first-child{
+    margin-top: 0;
+}
 @media only screen and (min-width: 992px){
     #content .cmu-modal-cards__grid{
         max-width: 1000px;
@@ -374,6 +463,7 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    --cmu-mc-title-line: calc(1.15rem * 1.15);
     aspect-ratio: 3 / 2;
     padding: 0 12px 14px;
     background-color: #262e2f;
@@ -405,7 +495,8 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     border-radius: 0 0 14px 14px;
     pointer-events: none;
 }
-#content .cmu-modal-cards__title{
+/* .cmu-modal-cards scope outranks the home template's body.home #content h2 (titles are h2 when there's no heading) */
+#content .cmu-modal-cards .cmu-modal-cards__title{
     margin: 0;
     color: #fff;
     font-size: 1.15rem;
@@ -416,8 +507,11 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     text-transform: uppercase;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    #content .cmu-modal-cards__title{
+    #content .cmu-modal-cards .cmu-modal-cards__title{
         font-size: 1rem;
+    }
+    #content .cmu-modal-cards__card{
+        --cmu-mc-title-line: calc(1rem * 1.15);
     }
 }
 #content .cmu-modal-cards__trigger{
@@ -438,7 +532,7 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
 #content .cmu-modal-cards__label{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     overflow-wrap: anywhere;
 }
@@ -472,9 +566,11 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     }
 }
 
+/* Same spot on every card: centered between the card top and a one-line title
+   (card height - 14px bottom padding - one title line) / 2. Titles are capped at 2 lines so they never reach it. */
 #content .cmu-modal-cards__play{
     position: absolute;
-    top: 36%;
+    top: calc((100% - 14px - var(--cmu-mc-title-line)) / 2);
     left: 50%;
     width: 64px;
     height: 64px;
@@ -537,12 +633,6 @@ body.home #content .cmu-hero__below .cmu-hero__wysiwyg > :last-child{
     padding: 1.5rem;
 }
 
-/* style.css caps every .modal .modal-dialog at 800px */
-@media (min-width: 1200px){
-    .modal.cmu-modal-cards__modal .modal-dialog.modal-xl{
-        max-width: 1140px;
-    }
-}
 .cmu-modal-cards__modal .cmu-modal-cards__modal-img{
     display: block;
     width: 100%;
@@ -723,28 +813,36 @@ body.home #content .cmu-two-col .cmu-two-col__heading{
         max-width: 1280px;
     }
 }
+/* Flex rather than grid so an incomplete last row is centered */
 #content .cmu-image-grid__list{
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
     margin: 30px 0 0;
     padding: 0;
     list-style: none;
 }
+#content .cmu-image-grid__list li{
+    flex: 0 0 100%;
+    min-width: 0;
+    margin: 0;
+}
 @media only screen and (min-width: 576px){
     #content .cmu-image-grid__list{
-        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+    #content .cmu-image-grid__list li{
+        flex-basis: calc((100% - 40px) / 3);
     }
 }
 @media only screen and (min-width: 992px){
     #content .cmu-image-grid__list{
-        grid-template-columns: repeat(5, 1fr);
         gap: 30px;
     }
-}
-#content .cmu-image-grid__list li{
-    margin: 0;
+    #content .cmu-image-grid__list li{
+        flex-basis: calc((100% - 120px) / 5);
+    }
 }
 
 #content a.cmu-image-grid__thumb{
@@ -828,6 +926,14 @@ body.home #content .cmu-two-col .cmu-two-col__heading{
 }
 #content .cmu-image-grid__thumb--video::after{
     background-image: none;
+}
+#content a.cmu-image-grid__thumb:focus-visible .cmu-image-grid__play{
+    background-color: transparent;
+}
+@media (hover: hover){
+    #content a.cmu-image-grid__thumb:hover .cmu-image-grid__play{
+        background-color: transparent;
+    }
 }
 
 /* Full-screen viewer (built by image-grid.js and appended to <body>) */
